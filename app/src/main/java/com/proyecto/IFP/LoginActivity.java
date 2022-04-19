@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+
     protected TextView label1;
     protected TextView label2;
     protected EditText box1; // user
@@ -18,6 +20,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
 
         label1 = (TextView) findViewById((R.id.label_loggin));
         label2 = (TextView) findViewById((R.id.label1_loggin));
