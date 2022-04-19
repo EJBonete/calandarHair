@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <EditText
+        android:id="@+id/box_loggin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/style_border_edittext"
+        android:ems="50"
+        android:fontFamily="@font/century"
+        android:hint="User"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#59040404"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_loggin" />
+
+    <Button
+        android:id="@+id/button_loggin"
+        android:layout_width="149dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="152dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/century"
+        android:text="Registro"
+        android:textAllCaps="false"
+        android:textColor="#59040404"
+        android:textSize="24sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box1_loggin"
+        app:layout_constraintVertical_bias="0.644" />
+
+    <Button
+        android:id="@+id/button1_loggin"
+        android:layout_width="149dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="148dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/century"
+        android:text="Loggin"
+        android:textAllCaps="false"
+        android:textColor="#59040404"
+        android:textSize="24sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box1_loggin"
+        app:layout_constraintVertical_bias="0.638" />
+
+    <TextView
+        android:id="@+id/label_loggin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="180dp"
+        android:fontFamily="@font/century"
+        android:text="User"
+        android:textColor="#94000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/box1_loggin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/style_border_edittext"
+        android:ems="10"
+        android:fontFamily="@font/century"
+        android:hint="Pasword"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#59040404"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label1_loggin" />
+
+    <TextView
+        android:id="@+id/label1_loggin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/century"
+        android:text="Pasword"
+        android:textColor="#94000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/box1_loggin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_loggin"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
