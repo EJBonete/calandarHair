@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendarHair">
         <activity
-            android:name=".DiaSoleccionadoActivity"
+            android:name=".DiaSeleccionadoActivity"
             android:exported="false" />
         <activity
             android:name=".RegistroActivity"
