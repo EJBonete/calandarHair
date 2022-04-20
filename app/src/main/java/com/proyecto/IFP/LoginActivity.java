@@ -2,7 +2,10 @@ package com.proyecto.IFP;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -10,10 +13,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    protected TextView label1;
-    protected TextView label2;
+    protected TextView label1; //.....izurza
+    protected TextView label2; // Comentario Nacho Marz
     protected EditText box; // user
     protected EditText box1; // pwd
+    protected Button boton1; // loguin
+    protected Button boton2; // registro
+    private Intent pasarPantalla;
+
+    // PRUEBA COMENTARIO MARC
 
 
 
@@ -27,6 +35,18 @@ public class LoginActivity extends AppCompatActivity {
         label2 = (TextView) findViewById((R.id.label1_loggin));
         box = (EditText) findViewById(R.id.box_loggin);
         box1 = (EditText) findViewById(R.id.box1_loggin);
+        boton1= (Button) findViewById(R.id.button1_loggin);
+        boton2= (Button) findViewById(R.id.button_loggin);
+
+        boton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pasarPantalla= new Intent(LoginActivity.this, AccesoActivity.class);
+                finish();
+                startActivity(pasarPantalla); // SplashActivity es la main, pero si lo pongo aqui no va
+
+
+
 
 
 
