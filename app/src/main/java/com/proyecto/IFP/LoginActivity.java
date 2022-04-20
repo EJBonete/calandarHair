@@ -14,7 +14,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     protected TextView label1; //.....izurza
-    protected TextView label2;
+    protected TextView label2; // Comentario Nacho Marz
     protected EditText box; // user
     protected EditText box1; // pwd
     protected Button boton1; // loguin
