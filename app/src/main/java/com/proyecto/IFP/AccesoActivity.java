@@ -11,4 +11,6 @@ public class AccesoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceso);
     }
+
+    // Prueba de merge con 'Developer'
 }
