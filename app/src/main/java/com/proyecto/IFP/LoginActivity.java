@@ -10,9 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
-
-
-
     protected TextView label1; //.....izurza
     protected TextView label2; // Comentario Nacho Marz
     protected EditText box; // user
@@ -41,16 +38,13 @@ public class LoginActivity extends AppCompatActivity {
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pasarPantalla= new Intent(LoginActivity.this, AccesoActivity.class);
+                pasarPantalla = new Intent(LoginActivity.this, AccesoActivity.class);
                 finish();
                 startActivity(pasarPantalla); // SplashActivity es la main, pero si lo pongo aqui no va
 
 
 
-
-
-
-
-
+            }
+            });
     }
 }
