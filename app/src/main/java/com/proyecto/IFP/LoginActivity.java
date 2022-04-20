@@ -19,7 +19,9 @@ public class LoginActivity extends AppCompatActivity {
     protected EditText box1; // pwd
     protected Button boton1; // loguin
     protected Button boton2; // registro
-    //private Intent pasarPantalla;
+    private Intent pasarPantalla;
+
+    // PRUEBA COMENTARIO MARC
 
 
 
