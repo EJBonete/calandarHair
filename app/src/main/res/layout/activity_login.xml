@@ -30,7 +30,6 @@
         android:id="@+id/button_loggin"
         android:layout_width="149dp"
         android:layout_height="56dp"
-        android:layout_marginStart="208dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="152dp"
         android:backgroundTint="@color/white"
@@ -41,9 +40,11 @@
         android:textSize="24sp"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toEndOf="@+id/button1_loggin"
         app:layout_constraintTop_toBottomOf="@+id/box1_loggin"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <Button
         android:id="@+id/button1_loggin"
