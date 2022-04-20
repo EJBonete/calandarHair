@@ -13,13 +13,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    protected TextView label1;
+    protected TextView label1; //.....izurza
     protected TextView label2;
     protected EditText box; // user
     protected EditText box1; // pwd
     protected Button boton1; // loguin
     protected Button boton2; // registro
-    private Intent pasarPantalla;
+    //private Intent pasarPantalla;
 
 
 
