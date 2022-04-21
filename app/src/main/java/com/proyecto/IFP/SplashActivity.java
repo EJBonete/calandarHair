@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
 
         TimerTask tt= new TimerTask() {
             @Override
-            public void run() { // 5.- metemos el codigo del paso 3
+            public void run() {
                 pasarPantalla= new Intent(SplashActivity.this, LoginActivity.class);
                 finish();
                 startActivity(pasarPantalla);
