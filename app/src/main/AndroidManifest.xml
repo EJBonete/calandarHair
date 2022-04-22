@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendarHair">
         <activity
+            android:name=".TodasActivity"
+            android:exported="false" />
+        <activity
             android:name=".DiaSeleccionadoActivity"
             android:exported="false" />
         <activity
             android:name=".RegistroActivity"
             android:exported="false" />
         <activity
-            android:name=".CitasProximasActivity"
+            android:name=".NuevaCitaActivity"
             android:exported="false" />
         <activity
             android:name=".DiasActivoActivity"

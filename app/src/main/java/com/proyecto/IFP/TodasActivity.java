@@ -7,26 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class DiasActivoActivity extends AppCompatActivity {
+public class TodasActivity extends AppCompatActivity {
 
+    protected Button boton1; // Atras
     private Intent pasarPantalla;
-    protected Button boton1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dias_activo);
+        setContentView(R.layout.activity_todas);
 
-        boton1= (Button) findViewById(R.id.button_diaActivo);
+        boton1= (Button) findViewById(R.id.button1_Todas);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pasarPantalla = new Intent(DiasActivoActivity.this, AccesoActivity.class);
+                pasarPantalla = new Intent(TodasActivity.this, AccesoActivity.class);
                 finish();
                 startActivity(pasarPantalla);
             }
         });
+
 
 
     }

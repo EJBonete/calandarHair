@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         label2 = (TextView) findViewById((R.id.label1_loggin));
         box = (EditText) findViewById(R.id.box_loggin);
         box1 = (EditText) findViewById(R.id.box1_loggin);
-        boton1= (Button) findViewById(R.id.button1_loggin);
-        boton2= (Button) findViewById(R.id.button_loggin);
+        boton1= (Button) findViewById(R.id.button2_acceso);
+        boton2= (Button) findViewById(R.id.button1_acceso);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
