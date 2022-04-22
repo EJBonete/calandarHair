@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_acceso.xml" value="0.3307291666666667" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/Calendar/app/src/main/res/layout/activity_login.xml" value="0.3572916666666667" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/Calendar/app/src/main/res/layout/activity_main.xml" value="0.3572916666666667" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2075" />
@@ -17,8 +18,6 @@
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_registro.xml" value="0.390625" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3975" />
-        <entry key="app/src/main/res/layout/activity_acceso.xml" value="0.25073649088541666" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
       </map>
     </option>
   </component>
