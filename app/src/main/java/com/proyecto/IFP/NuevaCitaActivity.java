@@ -31,7 +31,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nueva_cita);
 
 
-        boton1 = (Button) findViewById(R.id.button1_Nueva); // Hola
+        boton1 = (Button) findViewById(R.id.button1_Nueva); // Hola - mundo
         boton2 = (Button) findViewById(R.id.button2_Nueva);
         nombre = (EditText) findViewById(R.id.EditText1_Nueva);
         trabajo = (EditText) findViewById(R.id.EditText2_Nueva);
