@@ -22,7 +22,6 @@ public class NuevaCitaActivity extends AppCompatActivity {
     protected EditText trabajo;
     protected EditText otros;
 
-
     private Intent pasarPantalla;
 
 
@@ -31,7 +30,8 @@ public class NuevaCitaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nueva_cita);
 
-        boton1 = (Button) findViewById(R.id.button1_Nueva); // Hola - world
+
+        boton1 = (Button) findViewById(R.id.button1_Nueva); // Hola
         boton2 = (Button) findViewById(R.id.button2_Nueva);
         nombre = (EditText) findViewById(R.id.EditText1_Nueva);
         trabajo = (EditText) findViewById(R.id.EditText2_Nueva);
