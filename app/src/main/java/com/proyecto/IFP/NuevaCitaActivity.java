@@ -21,7 +21,6 @@ public class NuevaCitaActivity extends AppCompatActivity {
     protected EditText nombre;
     protected EditText trabajo;
     protected EditText otros;
-    protected String casa;
 
     private Intent pasarPantalla;
 
