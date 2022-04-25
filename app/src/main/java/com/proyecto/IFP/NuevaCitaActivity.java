@@ -48,32 +48,5 @@ public class NuevaCitaActivity extends AppCompatActivity  {
                 startActivity(pasarPantalla);
             }
         });
-        
-        boton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!nombre.getText().toString().isEmpty() && !trabajo.getText().toString().isEmpty() /*&& !telefono.getText().toString().isEmpty()*/)
-                {
-                    Intent intent = new Intent(Intent.ACTION_INSERT);
-                    intent.setData(CalendarContract.Events.CONTENT_URI);
-                    intent.putExtra(CalendarContract.Events.TITLE, nombre.getText().toString());
-                    intent.putExtra(CalendarContract.Events.EVENT_LOCATION, trabajo.getText().toString());
-                    intent.putExtra(CalendarContract.Events.DESCRIPTION, otros.getText().toString());
-                    intent.putExtra(CalendarContract.Events.ALL_DAY, false);
-                    intent.putExtra(Intent.EXTRA_EMAIL, "clanbil@gmail.com, marcmonterdemolina@gmail.com");
-
-                    if(intent.resolveActivity(getPackageManager()) !=null){
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(NuevaCitaActivity.this, "Acción no soportada", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(NuevaCitaActivity.this, "Debes rellenar los datos Nombre y Trabajo", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
     }
 }
