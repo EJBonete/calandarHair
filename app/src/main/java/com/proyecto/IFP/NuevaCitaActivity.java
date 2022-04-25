@@ -21,6 +21,9 @@ public class NuevaCitaActivity extends AppCompatActivity {
     protected EditText nombre;
     protected EditText trabajo;
     protected EditText otros;
+    protected String casa;
+
+    protected String name;
 
     private Intent pasarPantalla;
 
@@ -30,6 +33,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nueva_cita);
 
+<<<<<<<<< Temporary merge branch 1
 
         boton1 = (Button) findViewById(R.id.button1_Nueva); // Hola
         boton2 = (Button) findViewById(R.id.button2_Nueva);
