@@ -6,88 +6,257 @@
     android:layout_height="match_parent"
     tools:context=".NuevaCitaActivity">
 
-    <Button
-        android:id="@+id/button1_Nueva"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/century"
-        android:text="Atras"
-        android:textAllCaps="false"
-        android:textColor="#59040404"
-        android:textSize="24sp"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2_Nueva"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/century"
-        android:text="Añadir"
-        android:textAllCaps="false"
-        android:textColor="#59040404"
-        android:textSize="24sp"
-        android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditText3_Nueva" />
-
+    <!-- Caja de texto para indicar la pantalla -->
     <TextView
-        android:id="@+id/label1_nueva"
+        android:id="@+id/textView_nuevacita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="104dp"
+        android:fontFamily="@font/Delissia"
         android:text="Nueva Cita"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/EditText1_Nueva"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
+    <!-- Caja para capturar nombre -->
+    <RelativeLayout
+        android:id="@+id/relative_L_name_nuevaCita"
+        android:layout_width="347dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/style_border_edittext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label1_nueva" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_nuevacita">
 
-    <EditText
-        android:id="@+id/EditText2_Nueva"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Trabajo"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditText1_Nueva" />
+        <TextView
+            android:id="@+id/vector_person"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_person" />
 
-    <EditText
-        android:id="@+id/EditText3_Nueva"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Otros Datos"
-        android:inputType="textPersonName"
+        <EditText
+            android:id="@+id/editText_name_nuevaCita"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/vector_person"
+            android:background="00000"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+
+    <!-- Caja para capturar fecha y hora -->
+    <RelativeLayout
+        android:id="@+id/relative_L_contact_nuevaCita"
+        android:layout_width="347dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/style_border_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditText2_Nueva" />
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_name_nuevaCita">
+
+        <TextView
+            android:id="@+id/vector_contact"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_contact" />
+
+        <EditText
+            android:id="@+id/editText_contact_nuevaCita"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/vector_contact"
+            android:background="00000"
+            android:ems="10"
+            android:hint="Contacto"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_L_service_nuevaCita"
+        android:layout_width="347dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/style_border_edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_contact_nuevaCita">
+
+        <TextView
+            android:id="@+id/vector_service"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_work" />
+
+        <EditText
+            android:id="@+id/editText_service_nuevaCita"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/vector_service"
+            android:background="00000"
+            android:ems="10"
+            android:hint="Servicio"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_L_date_nuevaCita"
+        android:layout_width="347dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/style_border_edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_service_nuevaCita">
+
+        <TextView
+            android:id="@+id/vector_date"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_date_range" />
+
+        <EditText
+            android:id="@+id/editText_date_nuevaCita"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/vector_date"
+            android:background="00000"
+            android:ems="10"
+            android:hint="Seleccione fecha y hora"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+
+    <!-- Caja para capturar observaciones -->
+    <RelativeLayout
+        android:id="@+id/relative_L_others_nuevaCita"
+        android:layout_width="347dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/style_border_edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_date_nuevaCita">
+
+        <TextView
+            android:id="@+id/vector_others"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_others" />
+
+        <EditText
+            android:id="@+id/editText_others_nuevaCita"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/vector_others"
+            android:background="00000"
+            android:ems="10"
+            android:hint="Observaciones"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+    <!--Botón para ir atrás-->
+    <Button
+        android:id="@+id/button_1_back_nuevacita"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="#D7D7D7"
+        android:fontFamily="@font/montserrat_alternates_extrabold"
+        android:text="atrás"
+        android:textAlignment="center"
+        android:textColor="#0B0000"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_others_nuevaCita" />
+
+    <!--Botón guardar-->
+    <Button
+        android:id="@+id/button_2_save_nuevacita"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="#D7D7D7"
+        android:fontFamily="@font/montserrat_alternates_extrabold"
+        android:text="guardar"
+        android:textAlignment="center"
+        android:textColor="#0B0000"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_others_nuevaCita"
+        app:layout_constraintVertical_bias="0.482" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
