@@ -15,7 +15,7 @@ public class DiasActivoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dias_activo);
+        setContentView(R.layout.activity_edicion_cita);
 
         boton1= (Button) findViewById(R.id.button_diaActivo);
 

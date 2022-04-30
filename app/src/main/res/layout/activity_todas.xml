@@ -7,89 +7,96 @@
     tools:context=".TodasActivity">
 
     <TextView
-        android:id="@+id/Label4_Todas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/century"
-        android:text="Trabajo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.729"
-        app:layout_constraintStart_toEndOf="@+id/Label3_Todas"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/Label2_Todas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/century"
-        android:text="Hora"
-        app:layout_constraintBottom_toTopOf="@+id/list_diaSeleccionado"
-        app:layout_constraintStart_toEndOf="@+id/label1_Todas"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/label1_Todas"
+        android:id="@+id/textView_1_title_todas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/century"
-        android:text="Fecha"
-        app:layout_constraintBottom_toTopOf="@+id/list_diaSeleccionado"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/Delissia"
+        android:gravity="center_horizontal"
+        android:text="Todas las Citas"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
-        android:id="@+id/Label3_Todas"
+        android:id="@+id/textView_1_fecha_todas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/century"
-        android:text="Clienta"
-        app:layout_constraintStart_toEndOf="@+id/Label2_Todas"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat_alternates_semibold"
+        android:text="Fecha"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_1_title_todas" />
 
-    <Button
-        android:id="@+id/button1_Todas"
+    <TextView
+        android:id="@+id/textView_2_nombre_todas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/century"
-        android:text="Atras"
-        android:textAllCaps="false"
-        android:textColor="#59040404"
-        android:textSize="24sp"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/montserrat_alternates_semibold"
+        android:text="Nombre"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/list_view_1_todas"
+        app:layout_constraintEnd_toStartOf="@+id/textView_3_trabajo_todas"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toEndOf="@+id/textView_1_fecha_todas"
+        app:layout_constraintTop_toBottomOf="@+id/textView_1_title_todas"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_3_trabajo_todas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/montserrat_alternates_semibold"
+        android:text="Servicio"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_1_title_todas" />
+
+    <ListView
+        android:id="@+id/list_view_1_todas"
+        android:layout_width="342dp"
+        android:layout_height="453dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_1_back_hoy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ListView
-        android:id="@+id/ListView_Todas"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="Todas las Citas"
-        android:textSize="20sp"
+    <Button
+        android:id="@+id/button_1_back_hoy"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#D7D7D7"
+        android:fontFamily="@font/montserrat_alternates_extrabold"
+        android:text="ATRÁS"
+        android:textAlignment="center"
+        android:textColor="#0B0000"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

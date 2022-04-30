@@ -10,7 +10,9 @@
         android:id="@+id/label_diaSeleccionado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="128dp"
         android:fontFamily="@font/Delissia"
         android:text="Hoy"
         android:textColor="#000000"
@@ -23,70 +25,66 @@
 
     <ListView
         android:id="@+id/listview_hoy"
-        android:layout_width="347dp"
-        android:layout_height="436dp"
+        android:layout_width="342dp"
+        android:layout_height="453dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_1_back_hoy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_2_nombre_hoy" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView_1_hora_hoy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/montserrat_alternates_semibold"
         android:text="Hora"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/listview_hoy"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_diaSeleccionado"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/label_diaSeleccionado" />
 
     <TextView
         android:id="@+id/textView_2_nombre_hoy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat_alternates_semibold"
         android:text="Nombre"
         android:textColor="#000000"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/listview_hoy"
         app:layout_constraintEnd_toStartOf="@+id/textView_3_servicio_hoy"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toEndOf="@+id/textView_1_hora_hoy"
-        app:layout_constraintTop_toBottomOf="@+id/label_diaSeleccionado" />
+        app:layout_constraintTop_toBottomOf="@+id/label_diaSeleccionado"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView_3_servicio_hoy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="40dp"
         android:fontFamily="@font/montserrat_alternates_semibold"
         android:text="Servicio"
         android:textColor="#000000"
         android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/listview_hoy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_diaSeleccionado"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/label_diaSeleccionado" />
 
     <Button
         android:id="@+id/button_1_back_hoy"
         android:layout_width="145dp"
         android:layout_height="48dp"
         android:layout_marginStart="133dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="133dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#D7D7D7"
         android:fontFamily="@font/montserrat_alternates_extrabold"
         android:text="ATRÁS"
@@ -98,8 +96,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview_hoy"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
