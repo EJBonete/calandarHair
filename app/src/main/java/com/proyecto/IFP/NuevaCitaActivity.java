@@ -34,11 +34,11 @@ public class NuevaCitaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nueva_cita);
 
 
-        boton1 = (Button) findViewById(R.id.button1_Nueva); // Hola
-        boton2 = (Button) findViewById(R.id.button2_Nueva);
-        nombre = (EditText) findViewById(R.id.EditText1_Nueva);
-        trabajo = (EditText) findViewById(R.id.EditText2_Nueva);
-        otros = (EditText) findViewById(R.id.EditText3_Nueva);
+        boton1 = (Button) findViewById(R.id.button_1_back_nuevacita);
+        boton2 = (Button) findViewById(R.id.button_2_save_nuevacita);
+        nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
+        trabajo = (EditText) findViewById(R.id.editText_contact_nuevaCita);
+        otros = (EditText) findViewById(R.id.editText_contact_nuevaCita);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override

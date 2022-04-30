@@ -10,9 +10,9 @@ import android.widget.Button;
 public class AccesoActivity extends AppCompatActivity {
 
 
-    protected Button boton1; // hoy
-    protected Button boton2; // todas
-    protected Button boton3; // Nueva cita
+    protected Button boton1; // Nueva
+    protected Button boton2; // Hoy
+    protected Button boton3; // Todas
     private Intent pasarPantalla;
 
 
@@ -22,9 +22,9 @@ public class AccesoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceso);
 
-        boton1= (Button) findViewById(R.id.button1_acceso);
-        boton2= (Button) findViewById(R.id.button2_acceso);
-        boton3= (Button) findViewById(R.id.button3_acceso);
+        boton1= (Button) findViewById(R.id.button_1_new_acceso);
+        boton2= (Button) findViewById(R.id.button_2_today_acceso);
+        boton3= (Button) findViewById(R.id.button_3_alldates_acceso);
 
         boton1.setOnClickListener(new View.OnClickListener() {  // HOY
             @Override

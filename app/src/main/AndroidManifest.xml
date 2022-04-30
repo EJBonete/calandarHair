@@ -16,16 +16,10 @@
             android:name=".DiaSeleccionadoActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistroActivity"
-            android:exported="false" />
-        <activity
             android:name=".NuevaCitaActivity"
             android:exported="false" />
         <activity
             android:name=".DiasActivoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".AccesoActivity"

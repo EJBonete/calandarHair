@@ -17,7 +17,7 @@ public class TodasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todas);
 
-        boton1= (Button) findViewById(R.id.button1_Todas);
+        boton1= (Button) findViewById(R.id.button_1_back_todas);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
