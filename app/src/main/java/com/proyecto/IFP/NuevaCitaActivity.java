@@ -21,10 +21,6 @@ public class NuevaCitaActivity extends AppCompatActivity {
     protected EditText nombre;
     protected EditText trabajo;
     protected EditText otros;
-    protected String casa;
-
-    protected String name;
-
     private Intent pasarPantalla;
 
 
@@ -38,7 +34,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
         boton2 = (Button) findViewById(R.id.button_2_save_nuevacita);
         nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
         trabajo = (EditText) findViewById(R.id.editText_contact_nuevaCita);
-        otros = (EditText) findViewById(R.id.editText_contact_nuevaCita);
+        otros = (EditText) findViewById(R.id.editText_service_nuevaCita);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
