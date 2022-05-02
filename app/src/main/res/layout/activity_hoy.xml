@@ -28,7 +28,7 @@
                 android:id="@+id/constraint_1_hoy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp">
+                android:layout_marginTop="40dp">
 
                 <TextView
                     android:id="@+id/textView_title_hoy"
