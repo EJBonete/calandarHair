@@ -20,10 +20,18 @@ public class NuevaCitaActivity extends AppCompatActivity {
     protected Button boton2; // Añadir
     protected EditText nombre;
     protected EditText trabajo;
-    protected EditText otros;
-    protected String casa;
+    protected EditText telefono;
+    protected EditText fecha;
+    protected EditText observaciones;
+    //protected String casa;
+    private String contentNombre;
+    private String contentTrabajo= "";
+    private String contentTelefono="";
+    private String contentFecha;
+    private String contentObservaciones="";
+    private DataBaseSQL db;
 
-    protected String name;
+    //protected String name;
 
     private Intent pasarPantalla;
 
@@ -37,8 +45,10 @@ public class NuevaCitaActivity extends AppCompatActivity {
         boton1 = (Button) findViewById(R.id.button_1_back_nuevacita);
         boton2 = (Button) findViewById(R.id.button_2_save_nuevacita);
         nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
-        trabajo = (EditText) findViewById(R.id.editText_contact_nuevaCita);
-        otros = (EditText) findViewById(R.id.editText_contact_nuevaCita);
+        trabajo = (EditText) findViewById(R.id.editText_service_nuevaCita);
+        telefono = (EditText) findViewById(R.id.editText_contact_nuevaCita);
+        fecha= (EditText) findViewById(R.id.editText_date_nuevaCita);
+        observaciones= (EditText) findViewById((R.id.editText_others_nuevaCita));
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,27 +58,26 @@ public class NuevaCitaActivity extends AppCompatActivity {
                 startActivity(pasarPantalla);
             }
         });
+
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (!nombre.getText().toString().isEmpty() && !trabajo.getText().toString().isEmpty() /*&& !telefono.getText().toString().isEmpty()*/) {
-                    Intent intent = new Intent(Intent.ACTION_INSERT);
-                    intent.setData(CalendarContract.Events.CONTENT_URI);
-                    intent.putExtra(CalendarContract.Events.TITLE, nombre.getText().toString());
-                    intent.putExtra(CalendarContract.Events.EVENT_LOCATION, trabajo.getText().toString());
-                    intent.putExtra(CalendarContract.Events.DESCRIPTION, otros.getText().toString());
-                    intent.putExtra(CalendarContract.Events.ALL_DAY, false);
-                    intent.putExtra(Intent.EXTRA_EMAIL, "clanbil@gmail.com, marcmonterdemolina@gmail.com");
-
-                    if (intent.resolveActivity(getPackageManager()) != null) {
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(NuevaCitaActivity.this, "Acción no soportada", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(NuevaCitaActivity.this, "Debes rellenar los datos Nombre y Trabajo", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                contentNombre= nombre.getText().toString();//label1.getText().toString(); // capturamos los del label1
+                contentTelefono= telefono.getText().toString();
+                contentTrabajo= trabajo.getText().toString();
+                contentFecha= fecha.getText().toString();
+                contentObservaciones= observaciones.getText().toString();
+                if(contentNombre.equalsIgnoreCase("") || contentFecha.equalsIgnoreCase("")){
+                    Toast.makeText(NuevaCitaActivity.this,"Nombre y Fecha Obligatorio", Toast.LENGTH_SHORT).show();
                 }
+                else
+                {
+                    db.insertarCita(contentNombre, contentTelefono, contentTrabajo, contentFecha, contentObservaciones);
+                    Toast.makeText(NuevaCitaActivity.this, "Nota creada correctamente", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
+
     }
 }

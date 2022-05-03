@@ -15,6 +15,8 @@ public class AccesoActivity extends AppCompatActivity {
     protected Button boton3; // Todas
     private Intent pasarPantalla;
 
+    protected DataBaseSQL db;
+
 
 
     @Override
@@ -26,30 +28,37 @@ public class AccesoActivity extends AppCompatActivity {
         boton2= (Button) findViewById(R.id.button_2_today_acceso);
         boton3= (Button) findViewById(R.id.button_3_alldates_acceso);
 
-        boton1.setOnClickListener(new View.OnClickListener() {  // HOY
-            @Override
-            public void onClick(View view) {
-                pasarPantalla = new Intent(AccesoActivity.this, DiasActivoActivity.class);
-                finish();
-                startActivity(pasarPantalla);
-            }
-        });
+        db = new DataBaseSQL(this);
 
+        System.out.println("--> Numero de citas: "+db.numeroCitas());
+        db.deleteAllCitas();
+        //db.insertarCita("Maria","655665566","corte","12/12/2022");
+        System.out.println("--> Numero de citas: "+db.numeroCitas());
 
-
-        boton2.setOnClickListener(new View.OnClickListener() {  // Todas
-            @Override
-            public void onClick(View view) {
-                pasarPantalla = new Intent(AccesoActivity.this, TodasActivity.class);
-                finish();
-                startActivity(pasarPantalla);
-            }
-        });
-
-        boton3.setOnClickListener(new View.OnClickListener() {  // Proximas
+        boton1.setOnClickListener(new View.OnClickListener() {  // NUEVA
             @Override
             public void onClick(View view) {
                 pasarPantalla = new Intent(AccesoActivity.this, NuevaCitaActivity.class);
+                finish();
+                startActivity(pasarPantalla);
+            }
+        });
+
+
+
+        boton2.setOnClickListener(new View.OnClickListener() {  // HOY
+            @Override
+            public void onClick(View view) {
+                pasarPantalla = new Intent(AccesoActivity.this, DiaSeleccionadoActivity.class);
+                finish();
+                startActivity(pasarPantalla);
+            }
+        });
+
+        boton3.setOnClickListener(new View.OnClickListener() {  // TODAS
+            @Override
+            public void onClick(View view) {
+                pasarPantalla = new Intent(AccesoActivity.this, TodasActivity.class);
                 finish();
                 startActivity(pasarPantalla);
             }
