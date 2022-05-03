@@ -2,6 +2,7 @@ package com.proyecto.IFP;
 
 // Video usado: https://www.youtube.com/watch?v=NK_-phxyIAM
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,31 +13,38 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.proyecto.IFP.databinding.ActivityAccesoBinding;
+import com.proyecto.IFP.databinding.ActivityNuevaCitaBinding;
+
 
 public class NuevaCitaActivity extends AppCompatActivity {
 
 
-    protected Button boton1; // atras
-    protected Button boton2; // Añadir
     protected EditText nombre;
     protected EditText trabajo;
     protected EditText otros;
     private Intent pasarPantalla;
 
+    private ActivityNuevaCitaBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nueva_cita);
+        binding = ActivityNuevaCitaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
 
-        boton1 = (Button) findViewById(R.id.button_1_back_nuevacita);
-        boton2 = (Button) findViewById(R.id.button_2_save_nuevacita);
-        nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
-        trabajo = (EditText) findViewById(R.id.editText_contact_nuevaCita);
-        otros = (EditText) findViewById(R.id.editText_service_nuevaCita);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
-        boton1.setOnClickListener(new View.OnClickListener() {
+        //pagina para reparar entera, con la base de datos.
+        nombre = binding.editTextNameNuevaCita;
+        trabajo = binding.editTextContactNuevaCita;
+        otros = binding.editTextServiceNuevaCita;
+
+        binding.button1BackNuevacita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 pasarPantalla = new Intent(NuevaCitaActivity.this, AccesoActivity.class);
@@ -44,7 +52,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
                 startActivity(pasarPantalla);
             }
         });
-        boton2.setOnClickListener(new View.OnClickListener() {
+        binding.button1BackNuevacita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!nombre.getText().toString().isEmpty() && !trabajo.getText().toString().isEmpty() /*&& !telefono.getText().toString().isEmpty()*/) {
