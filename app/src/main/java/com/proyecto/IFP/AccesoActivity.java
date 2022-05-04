@@ -27,9 +27,10 @@ public class AccesoActivity extends AppCompatActivity {
         boton3 = (Button) findViewById(R.id.button_3_alldates_acceso);
         db = new DataBaseSQL(this);
 
+        db.getAllCitas();
         System.out.println("--> Numero de citas: " + db.numeroCitas());
-        db.deleteAllCitas();
-        //db.insertarCita("Maria","655665566","corte","12/12/2022");
+        //db.deleteAllCitas();
+        //db.insertarCita("Maria","655665566","corte","12/12/2022","mierda");
         System.out.println("--> Numero de citas: " + db.numeroCitas());
 
         boton1.setOnClickListener(new View.OnClickListener() {  // NUEVA

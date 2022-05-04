@@ -66,7 +66,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
                     Toast.makeText(NuevaCitaActivity.this, "Nombre y Fecha Obligatorio", Toast.LENGTH_SHORT).show();
                 } else {
                     db.insertarCita(contentNombre, contentTelefono, contentTrabajo, contentFecha, contentObservaciones);
-                    Toast.makeText(NuevaCitaActivity.this, "Nota creada correctamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NuevaCitaActivity.this, "Cita creada correctamente", Toast.LENGTH_SHORT).show();
                 }
 
             }

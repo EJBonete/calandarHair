@@ -34,11 +34,12 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     public void insertarCita(String nombre, String telefono, String servicio, String fecha, String observaciones)
     {
         db= this.getReadableDatabase();
-        db.execSQL("INSERT INTO tablacitas (nombre) VALUES ('"+nombre+"')");
+        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+observaciones+"')");
+        /*db.execSQL("INSERT INTO tablacitas (nombre) VALUES ('"+nombre+"')");
         db.execSQL("INSERT INTO tablacitas (telefono) VALUES ('"+telefono+"')");
         db.execSQL("INSERT INTO tablacitas (servicio) VALUES ('"+servicio+"')");
         db.execSQL("INSERT INTO tablacitas (fecha) VALUES ('"+fecha+"')");
-        db.execSQL("INSERT INTO tablacitas (observaciones) VALUES ('"+observaciones+"')");
+        db.execSQL("INSERT INTO tablacitas (observaciones) VALUES ('"+observaciones+"')");*/
 
     }
 
@@ -68,7 +69,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
             //contenido = res.getString(res.getColumnIndex("nombre"));
             arrayCitas.add(contenido);
             res.moveToNext();
-            //System.out.println("-->" + contenido);
+            System.out.println("-->" + contenido);
         }
 
         return arrayCitas;
@@ -99,7 +100,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM tablacitas");
     }
     //metodo borrar una nota de la tabla.
-    public void deleteNota(int id) {
+    public void deleteCita(int id) {
         db = this.getWritableDatabase();
         db.execSQL("DELETE FROM tablacitas WHERE id=" + id);
     }
