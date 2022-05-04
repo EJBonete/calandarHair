@@ -14,9 +14,7 @@ public class AccesoActivity extends AppCompatActivity {
     protected Button boton2; // Hoy
     protected Button boton3; // Todas
     private Intent pasarPantalla;
-
     protected DataBaseSQL db;
-
 
 
     @Override
@@ -24,16 +22,15 @@ public class AccesoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceso);
 
-        boton1= (Button) findViewById(R.id.button_1_new_acceso);
-        boton2= (Button) findViewById(R.id.button_2_today_acceso);
-        boton3= (Button) findViewById(R.id.button_3_alldates_acceso);
-
+        boton1 = (Button) findViewById(R.id.button_1_new_acceso);
+        boton2 = (Button) findViewById(R.id.button_2_today_acceso);
+        boton3 = (Button) findViewById(R.id.button_3_alldates_acceso);
         db = new DataBaseSQL(this);
 
-        System.out.println("--> Numero de citas: "+db.numeroCitas());
+        System.out.println("--> Numero de citas: " + db.numeroCitas());
         db.deleteAllCitas();
         //db.insertarCita("Maria","655665566","corte","12/12/2022");
-        System.out.println("--> Numero de citas: "+db.numeroCitas());
+        System.out.println("--> Numero de citas: " + db.numeroCitas());
 
         boton1.setOnClickListener(new View.OnClickListener() {  // NUEVA
             @Override
@@ -43,7 +40,6 @@ public class AccesoActivity extends AppCompatActivity {
                 startActivity(pasarPantalla);
             }
         });
-
 
 
         boton2.setOnClickListener(new View.OnClickListener() {  // HOY
@@ -63,7 +59,6 @@ public class AccesoActivity extends AppCompatActivity {
                 startActivity(pasarPantalla);
             }
         });
-
 
 
     }

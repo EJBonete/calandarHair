@@ -15,26 +15,20 @@ import android.widget.Toast;
 
 public class NuevaCitaActivity extends AppCompatActivity {
 
-
-    protected Button boton1; // atras
-    protected Button boton2; // Añadir
+    protected Button boton1;
+    protected Button boton2;
     protected EditText nombre;
     protected EditText trabajo;
     protected EditText telefono;
     protected EditText fecha;
     protected EditText observaciones;
-    //protected String casa;
     private String contentNombre;
-    private String contentTrabajo= "";
-    private String contentTelefono="";
+    private String contentTrabajo = "";
+    private String contentTelefono = "";
     private String contentFecha;
-    private String contentObservaciones="";
+    private String contentObservaciones = "";
     private DataBaseSQL db;
-
-    //protected String name;
-
     private Intent pasarPantalla;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +41,9 @@ public class NuevaCitaActivity extends AppCompatActivity {
         nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
         trabajo = (EditText) findViewById(R.id.editText_service_nuevaCita);
         telefono = (EditText) findViewById(R.id.editText_contact_nuevaCita);
-        fecha= (EditText) findViewById(R.id.editText_date_nuevaCita);
-        observaciones= (EditText) findViewById((R.id.editText_others_nuevaCita));
+        fecha = (EditText) findViewById(R.id.editText_date_nuevaCita);
+        observaciones = (EditText) findViewById((R.id.editText_others_nuevaCita));
+        db = new DataBaseSQL(this);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,16 +57,14 @@ public class NuevaCitaActivity extends AppCompatActivity {
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                contentNombre= nombre.getText().toString();//label1.getText().toString(); // capturamos los del label1
-                contentTelefono= telefono.getText().toString();
-                contentTrabajo= trabajo.getText().toString();
-                contentFecha= fecha.getText().toString();
-                contentObservaciones= observaciones.getText().toString();
-                if(contentNombre.equalsIgnoreCase("") || contentFecha.equalsIgnoreCase("")){
-                    Toast.makeText(NuevaCitaActivity.this,"Nombre y Fecha Obligatorio", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                contentNombre = nombre.getText().toString();//label1.getText().toString(); // capturamos los del label1
+                contentTelefono = telefono.getText().toString();
+                contentTrabajo = trabajo.getText().toString();
+                contentFecha = fecha.getText().toString();
+                contentObservaciones = observaciones.getText().toString();
+                if (contentNombre.equalsIgnoreCase("") || contentFecha.equalsIgnoreCase("")) {
+                    Toast.makeText(NuevaCitaActivity.this, "Nombre y Fecha Obligatorio", Toast.LENGTH_SHORT).show();
+                } else {
                     db.insertarCita(contentNombre, contentTelefono, contentTrabajo, contentFecha, contentObservaciones);
                     Toast.makeText(NuevaCitaActivity.this, "Nota creada correctamente", Toast.LENGTH_SHORT).show();
                 }
