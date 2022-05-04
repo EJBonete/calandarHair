@@ -14,6 +14,7 @@ public class AccesoActivity extends AppCompatActivity {
     protected Button boton2; // Hoy
     protected Button boton3; // Todas
     private Intent pasarPantalla;
+    protected DataBaseSQL db;
 
 
     @Override
@@ -24,8 +25,15 @@ public class AccesoActivity extends AppCompatActivity {
         boton1 = (Button) findViewById(R.id.button_1_new_acceso);
         boton2 = (Button) findViewById(R.id.button_2_today_acceso);
         boton3 = (Button) findViewById(R.id.button_3_alldates_acceso);
+        db = new DataBaseSQL(this);
 
-        boton1.setOnClickListener(new View.OnClickListener() {  // Nueva
+        db.getAllCitas();
+        System.out.println("--> Numero de citas: " + db.numeroCitas());
+        //db.deleteAllCitas();
+        //db.insertarCita("Maria","655665566","corte","12/12/2022","mierda");
+        System.out.println("--> Numero de citas: " + db.numeroCitas());
+
+        boton1.setOnClickListener(new View.OnClickListener() {  // NUEVA
             @Override
             public void onClick(View view) {
                 pasarPantalla = new Intent(AccesoActivity.this, NuevaCitaActivity.class);
@@ -37,13 +45,13 @@ public class AccesoActivity extends AppCompatActivity {
         boton2.setOnClickListener(new View.OnClickListener() {  // Hoy
             @Override
             public void onClick(View view) {
-                pasarPantalla = new Intent(AccesoActivity.this, DiasActivoActivity.class);
+                pasarPantalla = new Intent(AccesoActivity.this, DiaSeleccionadoActivity.class);
                 finish();
                 startActivity(pasarPantalla);
             }
         });
 
-        boton3.setOnClickListener(new View.OnClickListener() {  // Todas
+        boton3.setOnClickListener(new View.OnClickListener() {  // TODAS
             @Override
             public void onClick(View view) {
                 pasarPantalla = new Intent(AccesoActivity.this, TodasActivity.class);
