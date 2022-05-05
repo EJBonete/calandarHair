@@ -57,7 +57,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
          *idea 1.- una pulsación mostramos toda la información en pantalla en un toast.
          *          pulsación prolongada pasamos a la edición.
          */
-        //una pulsación prolongada.
+        //una pulsación prolongada para ir a la edicion, .
         list1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -67,10 +67,12 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
                 idP = db.getIdCita(contenidoItem);
                 //pasamos el contenido al ver activity
                 pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
-
                 pasarPantalla.putExtra("id", idP);
-                pasarPantalla.putExtra("CITA", contenidoItem);//¿?no tengo claro esta linea.
-
+                pasarPantalla.putExtra("nombre", contenidoItem);
+                pasarPantalla.putExtra("servicio", contenidoItem);
+                pasarPantalla.putExtra("hora",contenidoItem);
+                pasarPantalla.putExtra("fecha", contenidoItem);
+                pasarPantalla.putExtra("observaciones", contenidoItem);
                 startActivity(pasarPantalla);
                 return true;
             }
@@ -80,6 +82,8 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 contenidoItem = parent.getItemAtPosition(position).toString();
+
+
                 Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
             }
         });

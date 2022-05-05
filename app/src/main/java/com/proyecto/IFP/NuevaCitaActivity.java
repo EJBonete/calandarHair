@@ -32,6 +32,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
     private String contentTrabajo = "";
     private String contentTelefono = "";
     private String contentFecha;
+    private String contentHora;
     private String contentObservaciones = "";
     private DataBaseSQL db;
     private Intent pasarPantalla;
@@ -67,9 +68,9 @@ public class NuevaCitaActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog= new DatePickerDialog(NuevaCitaActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                        fecha.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                        fecha.setText( year+"-"+ (monthOfYear+1) +"-"+ dayOfMonth);
                     }
-                }, dia, mes, anyo);
+                }, anyo, mes, dia);
                 datePickerDialog.show();
             }
         });
@@ -99,11 +100,12 @@ public class NuevaCitaActivity extends AppCompatActivity {
                 contentTelefono = telefono.getText().toString();
                 contentTrabajo = trabajo.getText().toString();
                 contentFecha = fecha.getText().toString();
+                contentHora = hora.getText().toString();
                 contentObservaciones = observaciones.getText().toString();
                 if (contentNombre.equalsIgnoreCase("") || contentFecha.equalsIgnoreCase("")) {
                     Toast.makeText(NuevaCitaActivity.this, "Nombre y Fecha Obligatorio", Toast.LENGTH_SHORT).show();
                 } else {
-                    db.insertarCita(contentNombre, contentTelefono, contentTrabajo, contentFecha, contentObservaciones);
+                    db.insertarCita(contentNombre, contentTelefono, contentTrabajo, contentFecha,contentHora ,contentObservaciones);
                     Toast.makeText(NuevaCitaActivity.this, "Cita creada correctamente", Toast.LENGTH_SHORT).show();
                 }
             }

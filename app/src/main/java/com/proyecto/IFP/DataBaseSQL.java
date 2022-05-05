@@ -20,7 +20,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE table tablacitas (id integer primary key autoincrement, nombre text, telefono text,servicio text, fecha text, observaciones text)");
+        db.execSQL("CREATE table tablacitas (id integer primary key autoincrement, nombre text, telefono text,servicio text, fecha data, hora time, observaciones text)");
 
 
     }
@@ -32,10 +32,10 @@ public class DataBaseSQL extends SQLiteOpenHelper {
 
     }
 
-    public void insertarCita(String nombre, String telefono, String servicio, String fecha, String observaciones)
+    public void insertarCita(String nombre, String telefono, String servicio, String fecha, String hora,String observaciones)
     {
         db= this.getReadableDatabase();
-        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+observaciones+"')");
+        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+hora+"','"+observaciones+"')");
         /*db.execSQL("INSERT INTO tablacitas (nombre) VALUES ('"+nombre+"')");
         db.execSQL("INSERT INTO tablacitas (telefono) VALUES ('"+telefono+"')");
         db.execSQL("INSERT INTO tablacitas (servicio) VALUES ('"+servicio+"')");
@@ -57,7 +57,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     int year = cc.get(Calendar.YEAR);
     int month = cc.get(Calendar.MONTH);
     int mDay = cc.get(Calendar.DAY_OF_MONTH);
-    String fechaActual=mDay+"/"+(month+1)+"/"+year;
+    String fechaActual=year+"-"+(month+1)+"-"+mDay;
 
 //obtener listado de citas del dia actual.
     public ArrayList<String> getDiaSelecionado() {
@@ -65,20 +65,13 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         Cursor res = null;
         String contenido = "";
         db = this.getReadableDatabase();
-        res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='fechaActual'", null);
+        res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='"+fechaActual+"' ORDER BY hora", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getInt(res.getColumnIndex("id")) + ".-"
-                    + res.getString(res.getColumnIndex("nombre")) + ".-"
-                    + res.getString(res.getColumnIndex("telefono")) + ".-"
-                    + res.getString(res.getColumnIndex("servicio")) + ".-"
-                    + res.getString(res.getColumnIndex("fecha"))+ ".-"
-                    + res.getString(res.getColumnIndex("observaciones"));
-
-            //contenido = res.getString(res.getColumnIndex("nombre"));
+            contenido = res.getString(res.getColumnIndex("nombre")) + "-"
+                    + res.getString(res.getColumnIndex("servicio"));
             arrayCitas.add(contenido);
             res.moveToNext();
-          //  System.out.println("-->" + contenido);
         }
         return arrayCitas;
     }
