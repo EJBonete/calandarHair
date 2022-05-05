@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class DataBaseSQL extends SQLiteOpenHelper {
 
@@ -49,9 +50,40 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         db= this.getReadableDatabase();
         num= (int) DatabaseUtils.queryNumEntries(db, "tablacitas");
         return num;
-
-
     }
+
+    //obtener del tlf la feacha actual.
+    Calendar cc = Calendar.getInstance();
+    int year = cc.get(Calendar.YEAR);
+    int month = cc.get(Calendar.MONTH);
+    int mDay = cc.get(Calendar.DAY_OF_MONTH);
+    String fechaActual=mDay+"/"+(month+1)+"/"+year;
+
+//obtener listado de citas del dia actual.
+    public ArrayList<String> getDiaSelecionado() {
+        ArrayList<String> arrayCitas = new ArrayList<>();
+        Cursor res = null;
+        String contenido = "";
+        db = this.getReadableDatabase();
+        res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='fechaActual'", null);
+        res.moveToFirst();
+        while (res.isAfterLast() == false) {
+            contenido = res.getInt(res.getColumnIndex("id")) + ".-"
+                    + res.getString(res.getColumnIndex("nombre")) + ".-"
+                    + res.getString(res.getColumnIndex("telefono")) + ".-"
+                    + res.getString(res.getColumnIndex("servicio")) + ".-"
+                    + res.getString(res.getColumnIndex("fecha"))+ ".-"
+                    + res.getString(res.getColumnIndex("observaciones"));
+
+            //contenido = res.getString(res.getColumnIndex("nombre"));
+            arrayCitas.add(contenido);
+            res.moveToNext();
+          //  System.out.println("-->" + contenido);
+        }
+        return arrayCitas;
+    }
+
+
 
     public ArrayList<String> getAllCitas() {
 
@@ -62,8 +94,6 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         db = this.getReadableDatabase();
         res = db.rawQuery("SELECT * FROM tablacitas", null);
         res.moveToFirst();
-
-
         while (res.isAfterLast() == false) {
             contenido = res.getInt(res.getColumnIndex("id")) + ".-" + res.getString(res.getColumnIndex("nombre")) + ".-" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha"))+ ".-" + res.getString(res.getColumnIndex("observaciones"));
             //contenido = res.getString(res.getColumnIndex("nombre"));
@@ -75,7 +105,11 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         return arrayCitas;
 
     }
-    public int getIdNote(String nombre) {
+
+
+
+
+    public int getIdCita(String nombre) {
         int id=0;
         Cursor res = null;
         String contenido = "";
@@ -88,9 +122,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
                 res.moveToNext();
                 id=Integer.parseInt(contenido);
             }
-
         }
-
         return id;
     }
 

@@ -1,5 +1,6 @@
 package com.proyecto.IFP;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,6 +22,9 @@ public class AccesoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceso);
+        //Este codigo oculta la barra superior.
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         boton1 = (Button) findViewById(R.id.button_1_new_acceso);
         boton2 = (Button) findViewById(R.id.button_2_today_acceso);

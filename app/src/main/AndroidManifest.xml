@@ -19,9 +19,6 @@
             android:name=".NuevaCitaActivity"
             android:exported="false" />
         <activity
-            android:name=".DiasActivoActivity"
-            android:exported="false" />
-        <activity
             android:name=".AccesoActivity"
             android:exported="false" />
         <activity

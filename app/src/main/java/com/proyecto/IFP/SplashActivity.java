@@ -19,6 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
         TimerTask tt= new TimerTask() {
             @Override
             public void run() {
