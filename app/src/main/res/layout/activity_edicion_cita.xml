@@ -29,8 +29,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_1_nuevaCita"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
                 <TextView
@@ -106,7 +106,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_3_nuevaCita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_contact_nuevaCita"
@@ -153,58 +154,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_4_nuevaCita"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <RelativeLayout
-                    android:id="@+id/relative_L_others_nuevaCita"
-                    android:layout_width="347dp"
-                    android:layout_height="42dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/style_border_edittext"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/vector_others"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="10dp"
-                        android:drawableStart="@drawable/ic_others" />
-
-                    <EditText
-                        android:id="@+id/editText_others_edicionCitas"
-                        android:layout_width="271dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="0dp"
-                        android:layout_toEndOf="@+id/vector_others"
-                        android:alpha="0.95"
-                        android:background="#0000"
-                        android:ems="10"
-                        android:hint="Observaciones"
-                        android:inputType="textPersonName"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </RelativeLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_5_nuevaCita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_fecha_nuevaCita"
@@ -272,7 +225,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_6_nuevaCita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_service_nuevaCita"
@@ -319,6 +273,56 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_4_nuevaCita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/relative_L_others_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_border_edittext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/vector_others"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_others" />
+
+                    <EditText
+                        android:id="@+id/editText_others_edicionCitas"
+                        android:layout_width="271dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/vector_others"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:hint="Observaciones"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_8_nuevaCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -353,7 +357,8 @@
                 android:id="@+id/constraint_7_nuevaCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16">
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp">
 
                 <Button
                     android:id="@+id/button_2_save_edicionCitas"
