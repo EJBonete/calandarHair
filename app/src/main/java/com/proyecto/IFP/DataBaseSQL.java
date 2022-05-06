@@ -36,11 +36,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     {
         db= this.getReadableDatabase();
         db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, hora, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+hora+"','"+observaciones+"')");
-        /*db.execSQL("INSERT INTO tablacitas (nombre) VALUES ('"+nombre+"')");
-        db.execSQL("INSERT INTO tablacitas (telefono) VALUES ('"+telefono+"')");
-        db.execSQL("INSERT INTO tablacitas (servicio) VALUES ('"+servicio+"')");
-        db.execSQL("INSERT INTO tablacitas (fecha) VALUES ('"+fecha+"')");
-        db.execSQL("INSERT INTO tablacitas (observaciones) VALUES ('"+observaciones+"')");*/
+
 
     }
 
