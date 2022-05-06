@@ -28,13 +28,13 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_1_nuevaCita"
+                android:id="@+id/constraint_1_edicionCitas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/textView_edicionCitas"
+                    android:id="@+id/textView_nuevaCita"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_2_nuevaCita"
+                android:id="@+id/constraint_2_edicionCitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
@@ -81,8 +81,9 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_person" />
 
+                    <!-- Caja para capturar nombre -->
                     <EditText
-                        android:id="@+id/editText_name_edicionCitas"
+                        android:id="@+id/editText_name_nuevaCita"
                         android:layout_width="271dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -104,7 +105,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_3_nuevaCita"
+                android:id="@+id/constraint_3_edicionCitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -130,8 +131,9 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_contact" />
 
+                    <!-- Caja para capturar teléfono -->
                     <EditText
-                        android:id="@+id/editText_contact_edicionCitas"
+                        android:id="@+id/editText_contact_nuevaCita"
                         android:layout_width="271dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -153,7 +155,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_5_nuevaCita"
+                android:id="@+id/constraint_4_edicionCitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -196,9 +198,10 @@
                         android:ems="10"
                         android:gravity="clip_horizontal"
                         android:text="Hora"
-                        android:textAlignment="center"
+                        android:textAlignment="gravity"
                         android:textSize="18sp" />
 
+                    <!-- Caja para capturar fecha y hora -->
                     <TextView
                         android:id="@+id/editText_fecha_nuevaCita"
                         android:layout_width="wrap_content"
@@ -221,7 +224,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_6_nuevaCita"
+                android:id="@+id/constraint_5_edicionCitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -247,6 +250,7 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_work" />
 
+                    <!-- Caja para capturar servicio -->
                     <EditText
                         android:id="@+id/editText_service_nuevaCita"
                         android:layout_width="271dp"
@@ -270,7 +274,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_4_nuevaCita"
+                android:id="@+id/constraint_6_edicionCitas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -296,8 +300,9 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_others" />
 
+                    <!-- Caja para capturar observaciones -->
                     <EditText
-                        android:id="@+id/editText_others_edicionCitas"
+                        android:id="@+id/editText_others_nuevaCita"
                         android:layout_width="271dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -319,13 +324,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_7_nuevaCita"
+                android:id="@+id/constraint_8_edicionCitas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="48dp">
 
+                <!--Botón para ir atrás-->
                 <Button
-                    android:id="@+id/button_2_back_edicionCitas"
+                    android:id="@+id/button_2_back_nuevaCita"
                     android:layout_width="145dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="8dp"
@@ -343,8 +349,10 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
+                <!--Botón guardar-->
                 <Button
-                    android:id="@+id/button_2_save_edicionCitas"
+                    android:id="@+id/button_2_save_nuevaCita"
                     android:layout_width="145dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
@@ -361,7 +369,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/button_2_back_edicionCitas"
+                    app:layout_constraintStart_toEndOf="@+id/button_2_back_nuevaCita"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -369,16 +377,5 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Caja para capturar nombre -->
-
-
-    <!-- Caja para capturar fecha y hora -->
-
-
-    <!-- Caja para capturar observaciones -->
-
-    <!--Botón para ir atrás-->
-
-    <!--Botón guardar-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
