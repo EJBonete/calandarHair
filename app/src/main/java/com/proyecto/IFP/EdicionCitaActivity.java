@@ -43,9 +43,9 @@ public class EdicionCitaActivity extends AppCompatActivity {
             datoObservaciones = extra.getString("observaciones");
         }
 
-        boton1 = (Button) findViewById(R.id.button_1_back_edicionCitas);
-        boton2 = (Button) findViewById(R.id.button_2_save_nuevacita);
-        boton3 = (Button) findViewById(R.id.button_3_drop_edicionCitas);
+        boton1 = (Button) findViewById(R.id.button_2_back_edicionCitas);
+        boton2 = (Button) findViewById(R.id.button_2_save_edicionCitas);
+        boton3 = (Button) findViewById(R.id.button_2_back_edicionCitas);
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override

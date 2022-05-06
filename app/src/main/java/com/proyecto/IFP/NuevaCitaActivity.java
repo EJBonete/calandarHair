@@ -48,16 +48,16 @@ public class NuevaCitaActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        boton1 = (Button) findViewById(R.id.button_1_back_nuevacita);
-        boton2 = (Button) findViewById(R.id.button_2_save_nuevacita);
-        nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
+        boton1 = (Button) findViewById(R.id.button_2_back_edicionCitas);
+        boton2 = (Button) findViewById(R.id.button_2_save_edicionCitas);
+        nombre = (EditText) findViewById(R.id.editText_name_edicionCitas);
         trabajo = (EditText) findViewById(R.id.editText_service_nuevaCita);
-        telefono = (EditText) findViewById(R.id.editText_contact_nuevaCita);
+        telefono = (EditText) findViewById(R.id.editText_contact_edicionCitas);
 
         fecha = (TextView) findViewById(R.id.editText_fecha_nuevaCita);
-        hora= (TextView) findViewById(R.id.hora_nuevacita);
+        hora= (TextView) findViewById(R.id.hora_edicionCitas);
 
-        observaciones = (EditText) findViewById((R.id.editText_others_nuevaCita));
+        observaciones = (EditText) findViewById((R.id.editText_others_edicionCitas));
         db = new DataBaseSQL(this);
 
 //generamos en el editText la fecha para poder seleccionarla y mostrarla en el.
