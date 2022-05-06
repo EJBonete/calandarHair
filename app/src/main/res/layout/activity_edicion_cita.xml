@@ -60,7 +60,7 @@
                 android:layout_gravity="center">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_name_nuevaCita"
+                    android:id="@+id/relative_L_name_edicionCitas"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_contact_nuevaCita"
+                    android:id="@+id/relative_L_contact_edicionCitas"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
@@ -158,7 +158,7 @@
                 android:layout_height="match_parent">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_others_nuevaCita"
+                    android:id="@+id/relative_L_others_edicionCitas"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
@@ -207,7 +207,7 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_fecha_nuevaCita"
+                    android:id="@+id/relative_L_fecha_edicionCitas"
                     android:layout_width="347dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
@@ -245,7 +245,7 @@
                         android:ems="10"
                         android:gravity="clip_horizontal"
                         android:text="Hora"
-                        android:textAlignment="center"
+                        android:textAlignment="gravity"
                         android:textSize="18sp" />
 
                     <TextView
@@ -275,7 +275,7 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_service_nuevaCita"
+                    android:id="@+id/relative_L_service_edicionCitas"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
