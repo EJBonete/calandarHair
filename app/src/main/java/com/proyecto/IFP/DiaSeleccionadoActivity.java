@@ -35,15 +35,10 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_hoy);
 
-        /*
-         *Calendar cc = Calendar.getInstance();
-         *int year = cc.get(Calendar.YEAR);
-         *int month = cc.get(Calendar.MONTH);
-         *int mDay = cc.get(Calendar.DAY_OF_MONTH);
-         *System.out.println("-->" + year + ":" + (month + 1) + ":" + mDay);
-         */
-
+       db = new DataBaseSQL(this);
+        boton1 = (Button) findViewById(R.id.button_1_back_hoy);
         list1 = (ListView) findViewById(R.id.listview_hoy);
+
 
         //en esta parte insertamos las notas includias en el array en el ViewList.
         files = db.getDiaSelecionado();//este metodo no esta listo para funcionar

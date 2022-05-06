@@ -64,7 +64,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='"+fechaActual+"' ORDER BY hora", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getString(res.getColumnIndex("nombre")) + "-"
+            contenido = res.getString(res.getColumnIndex("hora"))+"         "+res.getString(res.getColumnIndex("nombre")) + "        "
                     + res.getString(res.getColumnIndex("servicio"));
             arrayCitas.add(contenido);
             res.moveToNext();
@@ -124,6 +124,13 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     public void deleteCita(int id) {
         db = this.getWritableDatabase();
         db.execSQL("DELETE FROM tablacitas WHERE id=" + id);
+    }
+    // FUNCION EDITAR CITA
+    public void editCita(int id, String nombre, String telefono, String servicio, String fecha, String hora,String observaciones )
+    {
+        db = getWritableDatabase();
+        db.execSQL("UPDATE tablacitas SET nombre='"+nombre+"', '"+telefono+"', '"+servicio+"', '"+fecha+"', '"+hora+"', '"+observaciones+"' WHERE id=" +id);
+
     }
 
     public void close()
