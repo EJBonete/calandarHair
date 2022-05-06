@@ -4,142 +4,334 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DiasActivoActivity">
+    android:background="#FFFFFF"
+    tools:context=".EdicionCitaActivity">
 
+    <!-- Caja de texto para indicar la pantalla -->
 
     <ScrollView
-        android:id="@+id/scroll_1_edicionCita"
-        android:layout_width="376dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linealLayout_1_edicionCitas"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_1_edicionCitas"
+                android:id="@+id/constraint_1_nuevaCita"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/textView_title"
+                    android:id="@+id/textView_edicionCitas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     android:fontFamily="@font/delisia"
-                    android:text="Edición cita"
-                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="Edición Cita"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.50"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.50" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_2_edicionCitas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/constraint_2_nuevaCita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/textView_1_fecha_edicionCitas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                <RelativeLayout
+                    android:id="@+id/relative_L_name_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/montserrat_alternates_semibold"
-                    android:text="Fecha"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.50" />
-
-                <TextView
-                    android:id="@+id/textView_2_nombre_edicionCitas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/montserrat_alternates_semibold"
-                    android:text="Nombre"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView_3_trabajo_edicionCitas"
-                    app:layout_constraintHorizontal_bias="0.50"
-                    app:layout_constraintStart_toEndOf="@+id/textView_1_fecha_edicionCitas"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.50" />
-
-                <TextView
-                    android:id="@+id/textView_3_trabajo_edicionCitas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/montserrat_alternates_semibold"
-                    android:text="Servicio"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:background="@drawable/style_border_edittext"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/vector_person"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_person" />
+
+                    <EditText
+                        android:id="@+id/editText_name_edicionCitas"
+                        android:layout_width="271dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/vector_person"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:hint="Nombre"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_3_edicionCitas"
-                android:layout_width="match_parent"
+                android:id="@+id/constraint_3_nuevaCita"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <ListView
-                    android:id="@+id/list_view_1_todas"
-                    android:layout_width="0dp"
-                    android:layout_height="360dp"
+                <RelativeLayout
+                    android:id="@+id/relative_L_contact_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="42dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_border_edittext"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.50" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/vector_contact"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_contact" />
+
+                    <EditText
+                        android:id="@+id/editText_contact_edicionCitas"
+                        android:layout_width="271dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/vector_contact"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:hint="Contacto"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_4_edicionCitas"
+                android:id="@+id/constraint_4_nuevaCita"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/relative_L_others_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_border_edittext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/vector_others"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_others" />
+
+                    <EditText
+                        android:id="@+id/editText_others_edicionCitas"
+                        android:layout_width="271dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/vector_others"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:hint="Observaciones"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_5_nuevaCita"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
+                <RelativeLayout
+                    android:id="@+id/relative_L_fecha_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_border_edittext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/vector_date"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_date_range" />
+
+                    <TextView
+                        android:id="@+id/hora_edicionCitas"
+                        android:layout_width="101dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:gravity="clip_horizontal"
+                        android:text="Hora"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/editText_fecha_nuevaCita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="27dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toStartOf="@+id/hora_edicionCitas"
+                        android:layout_toEndOf="@+id/vector_date"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:text="Dia"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_6_nuevaCita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/relative_L_service_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_border_edittext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/vector_service"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_work" />
+
+                    <EditText
+                        android:id="@+id/editText_service_nuevaCita"
+                        android:layout_width="271dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/vector_service"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:hint="Servicio"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_8_nuevaCita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp">
+
                 <Button
-                    android:id="@+id/button_2_save_edicionCitas"
+                    android:id="@+id/button_3_drop_edicionCitas"
                     android:layout_width="145dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#D7D7D7"
                     android:fontFamily="@font/montserrat_alternates_extrabold"
@@ -150,53 +342,58 @@
                     app:cornerRadius="5dp"
                     app:iconTint="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/button_3_drop_edicionCitas"
-                    android:layout_width="145dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:backgroundTint="#D7D7D7"
-                    android:fontFamily="@font/montserrat_alternates_extrabold"
-                    android:text="borrar"
-                    android:textAlignment="center"
-                    android:textColor="#0B0000"
-                    android:textSize="16sp"
-                    app:cornerRadius="5dp"
-                    app:iconTint="#000000"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_5_edicionCitas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/constraint_7_nuevaCita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16">
 
-                <!--Botón atrás-->
                 <Button
-                    android:id="@+id/button_1_back_edicionCitas"
-                    android:layout_width="148dp"
+                    android:id="@+id/button_2_save_edicionCitas"
+                    android:layout_width="145dp"
                     android:layout_height="48dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="64dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#D7D7D7"
                     android:fontFamily="@font/montserrat_alternates_extrabold"
-                    android:text="ATRÁS"
+                    android:text="BORRAR"
+                    android:textAlignment="center"
+                    android:textColor="#DA0E0E"
+                    android:textSize="16sp"
+                    app:cornerRadius="5dp"
+                    app:iconTint="#000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/button_2_back_edicionCitas"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <Button
+                    android:id="@+id/button_2_back_edicionCitas"
+                    android:layout_width="145dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="#D7D7D7"
+                    android:fontFamily="@font/montserrat_alternates_extrabold"
+                    android:text="atrás"
                     android:textAlignment="center"
                     android:textColor="#0B0000"
                     android:textSize="16sp"
                     app:cornerRadius="5dp"
                     app:iconTint="#000000"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -205,8 +402,16 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Caja para capturar nombre -->
+
+
+    <!-- Caja para capturar fecha y hora -->
+
+
+    <!-- Caja para capturar observaciones -->
+
+    <!--Botón para ir atrás-->
 
     <!--Botón guardar-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
