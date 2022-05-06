@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".NuevaCitaActivity">
 
     <!-- Caja de texto para indicar la pantalla -->
+
     <TextView
         android:id="@+id/textView_nuevacita"
         android:layout_width="wrap_content"
@@ -143,13 +145,15 @@
             tools:ignore="TouchTargetSizeCheck" />
     </RelativeLayout>
 
+
+    <!-- Caja para capturar observaciones -->
     <RelativeLayout
-        android:id="@+id/relative_L_date_nuevaCita"
-        android:layout_width="347dp"
-        android:layout_height="42dp"
+        android:id="@+id/relative_L_fecha_nuevaCita"
+        android:layout_width="177dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/style_border_edittext"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relative_L_service_nuevaCita">
 
@@ -161,29 +165,23 @@
             android:layout_marginStart="10dp"
             android:drawableStart="@drawable/ic_date_range" />
 
-        <EditText
-            android:id="@+id/editText_date_nuevaCita"
-            android:layout_width="271dp"
+        <TextView
+            android:id="@+id/editText_fecha_nuevaCita"
+            android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="2dp"
             android:layout_toEndOf="@+id/vector_date"
-            android:alpha="0.95"
-            android:background="#0000"
-            android:ems="10"
-            android:hint="Seleccione fecha y hora"
-            android:inputType="textPersonName"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:text="Dia" />
+
     </RelativeLayout>
 
-
-    <!-- Caja para capturar observaciones -->
+    <!--Botón para ir atrás-->
     <RelativeLayout
         android:id="@+id/relative_L_others_nuevaCita"
         android:layout_width="347dp"
@@ -192,7 +190,7 @@
         android:background="@drawable/style_border_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relative_L_date_nuevaCita">
+        app:layout_constraintTop_toBottomOf="@+id/hora_nuevacita">
 
         <TextView
             android:id="@+id/vector_others"
@@ -223,7 +221,6 @@
             tools:ignore="TouchTargetSizeCheck" />
     </RelativeLayout>
 
-    <!--Botón para ir atrás-->
     <Button
         android:id="@+id/button_1_back_nuevacita"
         android:layout_width="145dp"
@@ -263,5 +260,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relative_L_others_nuevaCita"
         app:layout_constraintVertical_bias="0.482" />
+
+    <TextView
+        android:id="@+id/hora_nuevacita"
+        android:layout_width="145dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="32dp"
+        android:gravity="clip_horizontal"
+        android:text="Hora"
+        android:textAlignment="center"
+        android:textColor="#9A0505"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toEndOf="@+id/relative_L_fecha_nuevaCita"
+        app:layout_constraintTop_toBottomOf="@+id/relative_L_service_nuevaCita" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

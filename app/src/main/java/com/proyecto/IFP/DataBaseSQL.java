@@ -35,7 +35,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     public void insertarCita(String nombre, String telefono, String servicio, String fecha, String hora,String observaciones)
     {
         db= this.getReadableDatabase();
-        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+hora+"','"+observaciones+"')");
+        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, hora, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+hora+"','"+observaciones+"')");
         /*db.execSQL("INSERT INTO tablacitas (nombre) VALUES ('"+nombre+"')");
         db.execSQL("INSERT INTO tablacitas (telefono) VALUES ('"+telefono+"')");
         db.execSQL("INSERT INTO tablacitas (servicio) VALUES ('"+servicio+"')");
@@ -88,7 +88,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         res = db.rawQuery("SELECT * FROM tablacitas", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getInt(res.getColumnIndex("id")) + ".-" + res.getString(res.getColumnIndex("nombre")) + ".-" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha"))+ ".-" + res.getString(res.getColumnIndex("observaciones"));
+            contenido = res.getInt(res.getColumnIndex("id")) + ".-" + res.getString(res.getColumnIndex("nombre")) + ".-" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha"))+ ".-" + res.getString(res.getColumnIndex("hora"))+ ".-" + res.getString(res.getColumnIndex("observaciones"));
             //contenido = res.getString(res.getColumnIndex("nombre"));
             arrayCitas.add(contenido);
             res.moveToNext();
