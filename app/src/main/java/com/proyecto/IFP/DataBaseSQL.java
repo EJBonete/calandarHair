@@ -64,8 +64,8 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='"+fechaActual+"' ORDER BY hora", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getString(res.getColumnIndex("hora"))+"         "+res.getString(res.getColumnIndex("nombre")) + "        "
-                    + res.getString(res.getColumnIndex("servicio"));
+            contenido = res.getString(res.getColumnIndex("hora")) +"/"+ res.getString(res.getColumnIndex("nombre")) + "/" +
+                     res.getString(res.getColumnIndex("servicio"));
             arrayCitas.add(contenido);
             res.moveToNext();
         }
@@ -84,7 +84,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         res = db.rawQuery("SELECT * FROM tablacitas", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getInt(res.getColumnIndex("id")) + ".-" + res.getString(res.getColumnIndex("nombre")) + ".-" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha"))+ ".-" + res.getString(res.getColumnIndex("hora"))+ ".-" + res.getString(res.getColumnIndex("observaciones"));
+            contenido = res.getInt(res.getColumnIndex("id")) + "/" + res.getString(res.getColumnIndex("nombre")) + "/" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha"))+ ".-" + res.getString(res.getColumnIndex("hora"))+ ".-" + res.getString(res.getColumnIndex("observaciones"));
             //contenido = res.getString(res.getColumnIndex("nombre"));
             arrayCitas.add(contenido);
             res.moveToNext();

@@ -26,7 +26,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
     private String contenidoItem;
     //private String contenidoId;
     private int idP;
-
+    private String[] partes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +48,69 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(DiaSeleccionadoActivity.this, android.R.layout.simple_list_item_1, files);
         list1.setAdapter(adapter);
 
-        /*pulsamos para poder pasar a la activity editar..... esta parte esta en proceso.
-         *idea 1.- una pulsación mostramos toda la información en pantalla en un toast.
-         *          pulsación prolongada pasamos a la edición.
-         */
+
+
+        //una pulsacion
+        list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                contenidoItem = parent.getItemAtPosition(position).toString();
+                Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
+
+                //obtenemos el contenido del Item
+               // contenidoItem = parent.getItemAtPosition(position).toString();
+                partes=contenidoItem.split("/");
+
+                if(partes.length>1){
+                    contenidoItem=partes[1];
+                    idP = db.getIdCita(contenidoItem);
+
+
+
+
+                    pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
+                    pasarPantalla.putExtra("id", idP);
+                    pasarPantalla.putExtra("NOMBRE", partes[1]);
+                    pasarPantalla.putExtra("servicio", partes[2]);
+                    pasarPantalla.putExtra("hora",partes[0]);
+
+                    //falta contacto
+
+                    pasarPantalla.putExtra("fecha", contenidoItem);
+
+                    pasarPantalla.putExtra("observaciones", contenidoItem);
+
+                    startActivity(pasarPantalla);
+                }
+
+
+
+
+                //pasamos el contenido al ver activity
+
+
+
+
+
+            }
+
+
+        });
+        //boton de retroceso a acceso
+        boton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pasarPantalla = new Intent(DiaSeleccionadoActivity.this, AccesoActivity.class);
+                finish();
+                startActivity(pasarPantalla);
+            }
+        });
+
+
+    }
+}
+/*
         //una pulsación prolongada para ir a la edicion, .
         list1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -72,26 +131,4 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
                 return true;
             }
         });
-        //una pulsacion
-        list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                contenidoItem = parent.getItemAtPosition(position).toString();
-
-
-                Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
-            }
-        });
-        //boton de retroceso a acceso
-        boton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pasarPantalla = new Intent(DiaSeleccionadoActivity.this, AccesoActivity.class);
-                finish();
-                startActivity(pasarPantalla);
-            }
-        });
-
-
-    }
-}
+        */

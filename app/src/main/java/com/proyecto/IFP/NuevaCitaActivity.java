@@ -49,12 +49,12 @@ public class NuevaCitaActivity extends AppCompatActivity {
         actionBar.hide();
 
         boton1 = (Button) findViewById(R.id.button_2_back_edicionCitas);
-        boton2 = (Button) findViewById(R.id.button_2_save_edicionCitas);
+        boton2 = (Button) findViewById(R.id.button_1_drop_edicionCitas);
         nombre = (EditText) findViewById(R.id.editText_name_edicionCitas);
-        trabajo = (EditText) findViewById(R.id.editText_service_nuevaCita);
+        trabajo = (EditText) findViewById(R.id.editText_service_edicionCita);
         telefono = (EditText) findViewById(R.id.editText_contact_edicionCitas);
 
-        fecha = (TextView) findViewById(R.id.editText_fecha_nuevaCita);
+        fecha = (TextView) findViewById(R.id.fecha_edicionCitas);
         hora= (TextView) findViewById(R.id.hora_edicionCitas);
 
         observaciones = (EditText) findViewById((R.id.editText_others_edicionCitas));
