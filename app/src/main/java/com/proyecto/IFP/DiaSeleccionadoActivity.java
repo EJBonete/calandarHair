@@ -21,7 +21,9 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
     private Intent pasarPantalla;
     protected DataBaseSQL db;
     private ArrayList<String> files = new ArrayList<String>();
+
     private ArrayAdapter<String> adapter;
+    private String nombre;
 
     private String contenidoItem;
     //private String contenidoId;
@@ -35,7 +37,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_hoy);
 
-       db = new DataBaseSQL(this);
+        db = new DataBaseSQL(this);
         boton1 = (Button) findViewById(R.id.button_1_back_hoy);
         list1 = (ListView) findViewById(R.id.listview_hoy);
 
@@ -53,30 +55,42 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
          *          pulsación prolongada pasamos a la edición.
          */
         //una pulsación prolongada para ir a la edicion, .
-        list1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+        // DE MOMENTO DESACTIVAMOS ESTA OPCION
+       list1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //obtenemos el contenido del Item
                 contenidoItem = parent.getItemAtPosition(position).toString();
                 idP = db.getIdCita(contenidoItem);
+
                 //pasamos el contenido al ver activity
-                pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
-                pasarPantalla.putExtra("id", idP);
+                pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EditarCitaActivity.class);
+                /*pasarPantalla.putExtra("id", idP);
                 pasarPantalla.putExtra("nombre", contenidoItem);
                 pasarPantalla.putExtra("servicio", contenidoItem);
                 pasarPantalla.putExtra("hora",contenidoItem);
                 pasarPantalla.putExtra("fecha", contenidoItem);
-                pasarPantalla.putExtra("observaciones", contenidoItem);
+                pasarPantalla.putExtra("observaciones", contenidoItem);*/
                 startActivity(pasarPantalla);
                 return true;
             }
         });
+
+
+
         //una pulsacion
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 contenidoItem = parent.getItemAtPosition(position).toString();
+                pasarPantalla= new Intent(DiaSeleccionadoActivity.this, EditarCitaActivity.class);
+                // Intento de capturar los datos del array para enviarlos separados
+
+                pasarPantalla.putExtra("nombre", contenidoItem);
+                finish();
+                startActivity(pasarPantalla);
 
 
                 Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();

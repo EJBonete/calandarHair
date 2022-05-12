@@ -50,7 +50,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
 
         boton1 = (Button) findViewById(R.id.button_2_back_nuevaCita);
         boton2 = (Button) findViewById(R.id.button_2_save_nuevaCita);
-        nombre = (EditText) findViewById(R.id.editText_name_edicionCita);
+        nombre = (EditText) findViewById(R.id.editText_name_nuevaCita);
         trabajo = (EditText) findViewById(R.id.editText_service_nuevaCita);
         telefono = (EditText) findViewById(R.id.editText_contact_nuevaCita);
 
@@ -92,19 +92,6 @@ public class NuevaCitaActivity extends AppCompatActivity {
                     }
                 }, horas, minutos, false);
                 timePickerDialog.show();
-                /*DatePickerDialog datePickerDialog= new DatePickerDialog(NuevaCitaActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                        fecha.setText( year+"-"+ (monthOfYear+1) +"-"+ dayOfMonth);
-                    }
-                }*/
-
-
-                ;
-
-
-
-
 
             }
         });
