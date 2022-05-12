@@ -22,11 +22,12 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
     protected DataBaseSQL db;
     private ArrayList<String> files = new ArrayList<String>();
 
+
     private ArrayAdapter<String> adapter;
     private String nombre;
 
     private String contenidoItem;
-    //private String contenidoId;
+    private String contenidoId;
     private int idP;
 
 
@@ -43,7 +44,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
 
 
         //en esta parte insertamos las notas includias en el array en el ViewList.
-        files = db.getDiaSelecionado();//este metodo no esta listo para funcionar
+        files = db.getAllCitas();//este metodo no esta listo para funcionar
 
 
 
@@ -87,8 +88,15 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
                 contenidoItem = parent.getItemAtPosition(position).toString();
                 pasarPantalla= new Intent(DiaSeleccionadoActivity.this, EditarCitaActivity.class);
                 // Intento de capturar los datos del array para enviarlos separados
+                System.out.println("**-->"+contenidoItem);
+                //idP = db.getIdCita(contenidoItem);
+
+                // SEPARAR STRING Y METERLO EN ARRAY
+
+
 
                 pasarPantalla.putExtra("nombre", contenidoItem);
+                pasarPantalla.putExtra("hora", contenidoItem);
                 finish();
                 startActivity(pasarPantalla);
 

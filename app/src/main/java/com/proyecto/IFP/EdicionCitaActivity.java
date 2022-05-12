@@ -35,6 +35,7 @@ public class EdicionCitaActivity extends AppCompatActivity {
 
         extra = getIntent().getExtras();
         if (extra != null) {
+
             datoNombre = extra.getString("nombre");
             datoTelefono = extra.getString("telefono");
             datoServicio = extra.getString("servicio");
