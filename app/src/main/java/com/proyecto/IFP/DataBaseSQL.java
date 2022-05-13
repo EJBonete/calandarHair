@@ -28,23 +28,23 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXIST citasBD");
-
-
     }
 
-    public void insertarCita(String nombre, String telefono, String servicio, String fecha, String hora,String observaciones)
-    {
-        db= this.getReadableDatabase();
-        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, hora, observaciones) VALUES ('"+nombre+"','"+telefono+"','"+servicio+"','"+fecha+"','"+hora+"','"+observaciones+"')");
-
-
+    public void insertarCita(String nombre, String telefono, String servicio, String fecha, String hora, String observaciones) {
+        db = this.getReadableDatabase();
+        db.execSQL("INSERT INTO tablacitas (nombre, telefono, servicio, fecha, hora, observaciones) VALUES ('" + nombre + "','" + telefono + "','" + servicio + "','" + fecha + "','" + hora + "','" + observaciones + "')");
     }
 
-    public int numeroCitas()
-    {
-        int num=0;
-        db= this.getReadableDatabase();
-        num= (int) DatabaseUtils.queryNumEntries(db, "tablacitas");
+    public void update(int id, String nombre, String contacto, String servicio, String fecha, String hora, String observaciones) {
+        db.execSQL("UPDATE tablacitas set nombre=" + nombre + ", contacto=" + contacto + ", servicio=" + servicio + ", " +
+                "fecha=" + fecha + ", hora=" + hora + ", observaciones=" + observaciones + " WHERE id=" + id);
+    }
+
+
+    public int numeroCitas() {
+        int num = 0;
+        db = this.getReadableDatabase();
+        num = (int) DatabaseUtils.queryNumEntries(db, "tablacitas");
         return num;
     }
 
@@ -53,25 +53,24 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     int year = cc.get(Calendar.YEAR);
     int month = cc.get(Calendar.MONTH);
     int mDay = cc.get(Calendar.DAY_OF_MONTH);
-    String fechaActual=year+"-"+(month+1)+"-"+mDay;
+    String fechaActual = year + "-" + (month + 1) + "-" + mDay;
 
-//obtener listado de citas del dia actual.
+    //obtener listado de citas del dia actual.
     public ArrayList<String> getDiaSelecionado() {
         ArrayList<String> arrayCitas = new ArrayList<>();
         Cursor res = null;
         String contenido = "";
         db = this.getReadableDatabase();
-        res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='"+fechaActual+"' ORDER BY hora", null);
+        res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='" + fechaActual + "' ORDER BY hora", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getString(res.getColumnIndex("hora")) +"/"+ res.getString(res.getColumnIndex("nombre")) + "/" +
-                     res.getString(res.getColumnIndex("servicio"));
+            contenido = res.getString(res.getColumnIndex("hora")) + "/" + res.getString(res.getColumnIndex("nombre")) + "/" +
+                    res.getString(res.getColumnIndex("servicio"));
             arrayCitas.add(contenido);
             res.moveToNext();
         }
         return arrayCitas;
     }
-
 
 
     public ArrayList<String> getAllCitas() {
@@ -84,7 +83,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         res = db.rawQuery("SELECT * FROM tablacitas", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getInt(res.getColumnIndex("id")) + "/" + res.getString(res.getColumnIndex("nombre")) + "/" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha"))+ ".-" + res.getString(res.getColumnIndex("hora"))+ ".-" + res.getString(res.getColumnIndex("observaciones"));
+            contenido = res.getInt(res.getColumnIndex("id")) + "/" + res.getString(res.getColumnIndex("nombre")) + "/" + res.getString(res.getColumnIndex("telefono")) + ".-" + res.getString(res.getColumnIndex("servicio")) + ".-" + res.getString(res.getColumnIndex("fecha")) + ".-" + res.getString(res.getColumnIndex("hora")) + ".-" + res.getString(res.getColumnIndex("observaciones"));
             //contenido = res.getString(res.getColumnIndex("nombre"));
             arrayCitas.add(contenido);
             res.moveToNext();
@@ -96,20 +95,18 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     }
 
 
-
-
     public int getIdCita(String nombre) {
-        int id=0;
+        int id = 0;
         Cursor res = null;
         String contenido = "";
         if (numeroCitas() > 0) {
             db = this.getReadableDatabase();
-            res = db.rawQuery("SELECT * FROM tablacitas WHERE nombre='"+nombre+"' ORDER BY id", null);
+            res = db.rawQuery("SELECT * FROM tablacitas WHERE nombre='" + nombre + "' ORDER BY id", null);
             res.moveToFirst();
             while (!res.isAfterLast()) {
                 contenido = res.getString(res.getColumnIndex("id"));
                 res.moveToNext();
-                id=Integer.parseInt(contenido);
+                id = Integer.parseInt(contenido);
             }
         }
         return id;
@@ -120,21 +117,21 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         db.execSQL("DELETE FROM tablacitas");
     }
+
     //metodo borrar una nota de la tabla.
     public void deleteCita(int id) {
         db = this.getWritableDatabase();
         db.execSQL("DELETE FROM tablacitas WHERE id=" + id);
     }
+
     // FUNCION EDITAR CITA
-    public void editCita(int id, String nombre, String telefono, String servicio, String fecha, String hora,String observaciones )
-    {
+    public void editCita(int id, String nombre, String telefono, String servicio, String fecha, String hora, String observaciones) {
         db = getWritableDatabase();
-        db.execSQL("UPDATE tablacitas SET nombre='"+nombre+"', '"+telefono+"', '"+servicio+"', '"+fecha+"', '"+hora+"', '"+observaciones+"' WHERE id=" +id);
+        db.execSQL("UPDATE tablacitas SET nombre='" + nombre + "', '" + telefono + "', '" + servicio + "', '" + fecha + "', '" + hora + "', '" + observaciones + "' WHERE id=" + id);
 
     }
 
-    public void close()
-    {
+    public void close() {
         db.close();
     }
 

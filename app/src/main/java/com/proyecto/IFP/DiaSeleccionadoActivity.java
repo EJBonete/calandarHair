@@ -75,7 +75,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
                     pasarPantalla.putExtra("servicio", partes[2]);
                     pasarPantalla.putExtra("hora",partes[0]);
 
-                    //falta contacto
+                    //ahora pasa el contenido de nombre, hay que traer mas datos desde la db.
 
                     pasarPantalla.putExtra("fecha", contenidoItem);
 
