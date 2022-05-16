@@ -50,18 +50,16 @@ public class TodasActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 contenidoItem = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(TodasActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(TodasActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
 
                 //obtenemos el contenido del Item
-                // contenidoItem = parent.getItemAtPosition(position).toString();
+
                 partes=contenidoItem.split("---");
-                //System.out.println("-->"+ partes[0]);
 
                 if(partes.length>1){
-                    //idP = db.getIdCita(contenidoItem);
-                    System.out.println("--> Id cita: "+partes[6]);
+
                     int idCita = Integer.parseInt(partes[6]); // lo pasamos a int
-                    System.out.println("------> Id cita: "+idCita);
+
 
                     pasarPantalla = new Intent(TodasActivity.this, EdicionCitaActivity.class);
                     pasarPantalla.putExtra("fecha", partes[0]);
@@ -74,8 +72,6 @@ public class TodasActivity extends AppCompatActivity {
 
                     startActivity(pasarPantalla);
                 }
-
-
             }
         });
 

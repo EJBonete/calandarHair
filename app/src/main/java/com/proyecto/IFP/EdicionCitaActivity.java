@@ -74,7 +74,7 @@ public class EdicionCitaActivity extends AppCompatActivity {
             datoTelefono = extra.getString("telefono");
             datoServicio = extra.getString("servicio");
             id = extra.getInt("id");
-            System.out.println("**------> Id cita: "+id);
+
 
 
             datoObservaciones = extra.getString("observaciones");
@@ -116,9 +116,6 @@ public class EdicionCitaActivity extends AppCompatActivity {
             boton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
-
 
                     db.editCita(id, box1.getText().toString(), box3.getText().toString(), box2.getText().toString(), label2.getText().toString(), label1.getText().toString(), box4.getText().toString());
                     Toast.makeText(EdicionCitaActivity.this, "La cita ha sido actualizada", Toast.LENGTH_SHORT).show();

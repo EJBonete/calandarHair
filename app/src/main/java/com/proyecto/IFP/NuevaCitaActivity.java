@@ -60,7 +60,7 @@ public class NuevaCitaActivity extends AppCompatActivity {
         observaciones = (EditText) findViewById((R.id.editText_others_edicionCitas));
         db = new DataBaseSQL(this);
 
-//generamos en el editText la fecha para poder seleccionarla y mostrarla en el.
+        //generamos en el editText la fecha para poder seleccionarla y mostrarla en el.
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,29 +92,10 @@ public class NuevaCitaActivity extends AppCompatActivity {
                     }
                 }, horas, minutos, false);
                 timePickerDialog.show();
-                /*DatePickerDialog datePickerDialog= new DatePickerDialog(NuevaCitaActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                        fecha.setText( year+"-"+ (monthOfYear+1) +"-"+ dayOfMonth);
-                    }
-                }*/
-
-
-                ;
-
-
-
 
 
             }
         });
-
-
-
-
-
-
-
 
 
 //boton para retroceder.
@@ -134,7 +115,6 @@ public class NuevaCitaActivity extends AppCompatActivity {
                 contentTelefono = telefono.getText().toString();
                 contentTrabajo = trabajo.getText().toString();
                 contentFecha = fecha.getText().toString();
-                //contentHora = "12:00:00";
                 contentHora = hora.getText().toString();
                 contentObservaciones = observaciones.getText().toString();
                 if (contentNombre.equalsIgnoreCase("") || contentFecha.equalsIgnoreCase("")) {

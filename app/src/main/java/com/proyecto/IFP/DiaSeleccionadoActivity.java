@@ -24,8 +24,6 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
 
     private String contenidoItem;
-    //private String contenidoId;
-    private int idP;
     private String[] partes;
 
     @Override
@@ -41,14 +39,10 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
 
 
         //en esta parte insertamos las notas includias en el array en el ViewList.
-        files = db.getDiaSelecionado();//este metodo no esta listo para funcionar
-
-
+        files = db.getDiaSelecionado();
 
         adapter = new ArrayAdapter<String>(DiaSeleccionadoActivity.this, android.R.layout.simple_list_item_1, files);
         list1.setAdapter(adapter);
-
-
 
         //una pulsacion
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,21 +50,14 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 contenidoItem = parent.getItemAtPosition(position).toString();
-                Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
 
                 //obtenemos el contenido del Item
-               // contenidoItem = parent.getItemAtPosition(position).toString();
+
                 partes=contenidoItem.split("---");
-                //System.out.println("-->"+ partes[0]);
 
                 if(partes.length>1){
-                    //idP = db.getIdCita(contenidoItem);
-                    System.out.println("--> Id cita: "+partes[6]);
                     int idCita = Integer.parseInt(partes[6]); // lo pasamos a int
-                    System.out.println("------> Id cita: "+idCita);
-
-
-
 
                     pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
 
@@ -85,17 +72,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
                     startActivity(pasarPantalla);
                 }
 
-
-
-
-                //pasamos el contenido al ver activity
-
-
-
-
-
             }
-
 
         });
         //boton de retroceso a acceso
@@ -111,25 +88,3 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
 
     }
 }
-/*
-        //una pulsación prolongada para ir a la edicion, .
-        list1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
-                //obtenemos el contenido del Item
-                contenidoItem = parent.getItemAtPosition(position).toString();
-                idP = db.getIdCita(contenidoItem);
-                //pasamos el contenido al ver activity
-                pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
-                pasarPantalla.putExtra("id", idP);
-                pasarPantalla.putExtra("nombre", contenidoItem);
-                pasarPantalla.putExtra("servicio", contenidoItem);
-                pasarPantalla.putExtra("hora",contenidoItem);
-                pasarPantalla.putExtra("fecha", contenidoItem);
-                pasarPantalla.putExtra("observaciones", contenidoItem);
-                startActivity(pasarPantalla);
-                return true;
-            }
-        });
-        */
