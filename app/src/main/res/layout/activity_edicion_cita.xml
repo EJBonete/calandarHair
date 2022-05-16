@@ -29,8 +29,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_1_nuevaCita"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
                 <TextView
@@ -106,7 +106,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_3_nuevaCita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_contact_nuevaCita"
@@ -154,8 +155,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_4_nuevaCita"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_others_nuevaCita"
@@ -204,7 +206,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_5_nuevaCita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_fecha_nuevaCita"
@@ -272,7 +275,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint_6_nuevaCita"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <RelativeLayout
                     android:id="@+id/relative_L_service_nuevaCita"
