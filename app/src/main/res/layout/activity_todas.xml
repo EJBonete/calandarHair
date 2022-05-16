@@ -55,58 +55,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/textView_2_fecha_todas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/montserrat_alternates_semibold"
-                    android:text="Fecha"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_3_nombre_todas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="48dp"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/montserrat_alternates_semibold"
-                    android:text="Nombre"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView_4_trabajo_todas"
-                    app:layout_constraintStart_toEndOf="@+id/textView_2_fecha_todas"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_4_trabajo_todas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/montserrat_alternates_semibold"
-                    android:text="Servicio"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
                 <ListView
                     android:id="@+id/list_view_1_todas"
                     android:layout_width="342dp"
@@ -115,6 +63,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:divider="#333cff"
+                    android:dividerHeight="2sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

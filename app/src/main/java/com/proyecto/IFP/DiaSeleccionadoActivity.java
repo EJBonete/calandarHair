@@ -21,14 +21,10 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
     private Intent pasarPantalla;
     protected DataBaseSQL db;
     private ArrayList<String> files = new ArrayList<String>();
-
     private ArrayAdapter<String> adapter;
-    private String nombre;
 
     private String contenidoItem;
-    //private String contenidoId;
-    private int idP;
-
+    private String[] partes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,58 +39,41 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
 
 
         //en esta parte insertamos las notas includias en el array en el ViewList.
-        files = db.getDiaSelecionado();//este metodo no esta listo para funcionar
-
-
+        files = db.getDiaSelecionado();
 
         adapter = new ArrayAdapter<String>(DiaSeleccionadoActivity.this, android.R.layout.simple_list_item_1, files);
         list1.setAdapter(adapter);
-
-        /*pulsamos para poder pasar a la activity editar..... esta parte esta en proceso.
-         *idea 1.- una pulsación mostramos toda la información en pantalla en un toast.
-         *          pulsación prolongada pasamos a la edición.
-         */
-        //una pulsación prolongada para ir a la edicion, .
-
-        // DE MOMENTO DESACTIVAMOS ESTA OPCION
-       list1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
-                //obtenemos el contenido del Item
-                contenidoItem = parent.getItemAtPosition(position).toString();
-                idP = db.getIdCita(contenidoItem);
-
-                //pasamos el contenido al ver activity
-                pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EditarCitaActivity.class);
-                /*pasarPantalla.putExtra("id", idP);
-                pasarPantalla.putExtra("nombre", contenidoItem);
-                pasarPantalla.putExtra("servicio", contenidoItem);
-                pasarPantalla.putExtra("hora",contenidoItem);
-                pasarPantalla.putExtra("fecha", contenidoItem);
-                pasarPantalla.putExtra("observaciones", contenidoItem);*/
-                startActivity(pasarPantalla);
-                return true;
-            }
-        });
-
-
 
         //una pulsacion
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 contenidoItem = parent.getItemAtPosition(position).toString();
-                pasarPantalla= new Intent(DiaSeleccionadoActivity.this, EditarCitaActivity.class);
-                // Intento de capturar los datos del array para enviarlos separados
+                //Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
 
-                pasarPantalla.putExtra("nombre", contenidoItem);
-                finish();
-                startActivity(pasarPantalla);
+                //obtenemos el contenido del Item
 
+                partes=contenidoItem.split("---");
 
-                Toast.makeText(DiaSeleccionadoActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
+                if(partes.length>1){
+                    int idCita = Integer.parseInt(partes[6]); // lo pasamos a int
+
+                    pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
+
+                    pasarPantalla.putExtra("hora",partes[0]);
+                    pasarPantalla.putExtra("fecha", partes[1]);
+                    pasarPantalla.putExtra("NOMBRE", partes[2]);
+                    pasarPantalla.putExtra("telefono", partes[3]);
+                    pasarPantalla.putExtra("servicio", partes[4]);
+                    pasarPantalla.putExtra("observaciones", partes[5]);
+                    pasarPantalla.putExtra("id", idCita);
+
+                    startActivity(pasarPantalla);
+                }
+
             }
+
         });
         //boton de retroceso a acceso
         boton1.setOnClickListener(new View.OnClickListener() {

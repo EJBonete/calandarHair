@@ -6,12 +6,11 @@
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_acceso.xml" value="0.3328125" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_citas_proximas.xml" value="0.3328125" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_dia_soleccionado.xml" value="0.3328125" />
-        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_edicion_cita.xml" value="0.33" />
-        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_editar_cita.xml" value="0.15677083333333333" />
-        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_hoy.xml" value="0.33" />
+        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_edicion_cita.xml" value="0.2520833333333333" />
+        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_hoy.xml" value="0.1" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_main.xml" value="0.31197916666666664" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_nueva_cita.xml" value="0.33" />
-        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_todas.xml" value="0.3328125" />
+        <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_todas.xml" value="0.1" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/ProgrMulti/workspaceAndroid/CalandHair/app/src/main/res/layout/calendar_cell.xml" value="0.16944444444444445" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_acceso.xml" value="0.5" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_citas_proximas.xml" value="0.33" />
@@ -23,48 +22,22 @@
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/CalandHair/app/src/main/res/layout/activity_todas.xml" value="0.33" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/Calendar/app/src/main/res/layout/activity_login.xml" value="0.3572916666666667" />
         <entry key="..\:/Papi/CURSO IFP/DAM2/Segundo Semestre/Programacion Multimedia y disp moviles/workspaceAndroid/Calendar/app/src/main/res/layout/activity_main.xml" value="0.3572916666666667" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/drawable-xxxhdpi/style_buttom.xml" value="0.3715" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/drawable-xxxhdpi/style_textField.xml" value="0.224" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/drawable/ic_contact.xml" value="0.3715" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/drawable/ic_contact_phone_black_24dp.xml" value="0.3715" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/drawable/ic_person_black_24dp.xml" value="0.3715" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/drawable/style_border_edittext.xml" value="0.3675" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/font/.xml" value="0.4010416666666667" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/font/montserrat_semibold.xml" value="0.396875" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_acceso.xml" value="0.33" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_acceso_fail.xml" value="0.37083333333333335" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_dia_soleccionado.xml" value="0.33" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_dias_activo.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_edicion_cita.xml" value="0.33" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_hoy.xml" value="0.33" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_nueva_cita.xml" value="0.33" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_registro.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_test.xml" value="0.37083333333333335" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_todas.xml" value="0.37083333333333335" />
-        <entry key="..\:/Users/Nacho/AndroidStudioProjects/calandarHair/app/src/main/res/layout/test.xml" value="0.37083333333333335" />
-        <entry key="..\:/Users/ejbon/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity__edition_cita.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/ejbon/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_acceso.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/ejbon/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_edicion_cita.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ejbon/AndroidStudioProjects/calandarHair/app/src/main/res/layout/activity_nueva_cita.xml" value="0.25416666666666665" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2075" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/drawable/ic_spinner.xml" value="0.3945" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/drawable/id_spinner.xml" value="0.176" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/drawable/style_border_edittext.xml" value="0.2" />
+        <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/font/.xml" value="0.21979166666666666" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_acceso.xml" value="0.4" />
-        <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_citas_proximas.xml" value="0.4" />
+        <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_citas_proximas.xml" value="0.2" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_dia_soleccionado.xml" value="0.5863689776733255" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_dias_activo.xml" value="0.390625" />
+        <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_edicion_cita.xml" value="0.264" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_login.xml" value="0.390625" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/layout/activity_registro.xml" value="0.390625" />
         <entry key="..\:/workspaceAndroid/CalendarHair/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3975" />
       </map>
     </option>
-  </component>
-  <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../../TFG/uml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
