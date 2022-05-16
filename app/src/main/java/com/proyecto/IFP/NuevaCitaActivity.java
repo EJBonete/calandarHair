@@ -1,6 +1,6 @@
 package com.proyecto.IFP;
 
-// Video usado: https://www.youtube.com/watch?v=NK_-phxyIAM
+
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,19 +48,19 @@ public class NuevaCitaActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        boton1 = (Button) findViewById(R.id.button_2_back_nuevaCita);
-        boton2 = (Button) findViewById(R.id.button_2_save_nuevaCita);
-        nombre = (EditText) findViewById(R.id.editText_name_edicionCita);
-        trabajo = (EditText) findViewById(R.id.editText_service_nuevaCita);
-        telefono = (EditText) findViewById(R.id.editText_contact_nuevaCita);
+        boton1 = (Button) findViewById(R.id.button_2_back_edicionCitas);
+        boton2 = (Button) findViewById(R.id.button_1_drop_edicionCitas);
+        nombre = (EditText) findViewById(R.id.editText_name_edicionCitas);
+        trabajo = (EditText) findViewById(R.id.editText_service_edicionCita);
+        telefono = (EditText) findViewById(R.id.editText_contact_edicionCitas);
 
-        fecha = (TextView) findViewById(R.id.editText_fecha_nuevaCita);
+        fecha = (TextView) findViewById(R.id.fecha_edicionCitas);
         hora= (TextView) findViewById(R.id.hora_edicionCitas);
 
-        observaciones = (EditText) findViewById((R.id.editText_others_nuevaCita));
+        observaciones = (EditText) findViewById((R.id.editText_others_edicionCitas));
         db = new DataBaseSQL(this);
 
-//generamos en el editText la fecha para poder seleccionarla y mostrarla en el.
+        //generamos en el editText la fecha para poder seleccionarla y mostrarla en el.
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,29 +92,10 @@ public class NuevaCitaActivity extends AppCompatActivity {
                     }
                 }, horas, minutos, false);
                 timePickerDialog.show();
-                /*DatePickerDialog datePickerDialog= new DatePickerDialog(NuevaCitaActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                        fecha.setText( year+"-"+ (monthOfYear+1) +"-"+ dayOfMonth);
-                    }
-                }*/
-
-
-                ;
-
-
-
 
 
             }
         });
-
-
-
-
-
-
-
 
 
 //boton para retroceder.
@@ -134,7 +115,6 @@ public class NuevaCitaActivity extends AppCompatActivity {
                 contentTelefono = telefono.getText().toString();
                 contentTrabajo = trabajo.getText().toString();
                 contentFecha = fecha.getText().toString();
-                //contentHora = "12:00:00";
                 contentHora = hora.getText().toString();
                 contentObservaciones = observaciones.getText().toString();
                 if (contentNombre.equalsIgnoreCase("") || contentFecha.equalsIgnoreCase("")) {

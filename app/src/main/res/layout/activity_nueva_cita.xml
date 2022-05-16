@@ -22,19 +22,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_1_edicionCitas"
+                android:id="@+id/constraint_1_nuevaCita"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/textView_nuevaCita"
+                    android:id="@+id/textView_edicionCitas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -54,13 +54,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_2_edicionCitas"
+                android:id="@+id/constraint_2_nuevaCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_name_edicionCitas"
+                    android:id="@+id/relative_L_name_nuevaCita"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
@@ -81,9 +81,8 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_person" />
 
-                    <!-- Caja para capturar nombre -->
                     <EditText
-                        android:id="@+id/editText_name_nuevaCita"
+                        android:id="@+id/editText_name_edicionCitas"
                         android:layout_width="271dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -105,12 +104,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_3_edicionCitas"
+                android:id="@+id/constraint_3_nuevaCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_contact_edicionCitas"
+                    android:id="@+id/relative_L_contact_nuevaCita"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
@@ -131,9 +130,8 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_contact" />
 
-                    <!-- Caja para capturar teléfono -->
                     <EditText
-                        android:id="@+id/editText_contact_nuevaCita"
+                        android:id="@+id/editText_contact_edicionCitas"
                         android:layout_width="271dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -155,12 +153,61 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_4_edicionCitas"
+                android:id="@+id/constraint_4_nuevaCita"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/relative_L_others_nuevaCita"
+                    android:layout_width="347dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_border_edittext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/vector_others"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/ic_others" />
+
+                    <EditText
+                        android:id="@+id/editText_others_edicionCitas"
+                        android:layout_width="271dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/vector_others"
+                        android:alpha="0.95"
+                        android:background="#0000"
+                        android:ems="10"
+                        android:hint="Observaciones"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_5_nuevaCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_fecha_edicionCitas"
+                    android:id="@+id/relative_L_fecha_nuevaCita"
                     android:layout_width="347dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
@@ -196,14 +243,13 @@
                         android:alpha="0.95"
                         android:background="#0000"
                         android:ems="10"
-                        android:gravity="clip_horizontal"
+                        android:gravity="center_horizontal"
                         android:text="Hora"
-                        android:textAlignment="gravity"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
-                    <!-- Caja para capturar fecha y hora -->
                     <TextView
-                        android:id="@+id/editText_fecha_nuevaCita"
+                        android:id="@+id/fecha_edicionCitas"
                         android:layout_width="wrap_content"
                         android:layout_height="27dp"
                         android:layout_alignParentTop="true"
@@ -224,12 +270,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_5_edicionCitas"
+                android:id="@+id/constraint_6_nuevaCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/relative_L_service_edicionCitas"
+                    android:id="@+id/relative_L_service_nuevaCita"
                     android:layout_width="347dp"
                     android:layout_height="42dp"
                     android:layout_marginStart="8dp"
@@ -250,9 +296,8 @@
                         android:layout_marginStart="10dp"
                         android:drawableStart="@drawable/ic_work" />
 
-                    <!-- Caja para capturar servicio -->
                     <EditText
-                        android:id="@+id/editText_service_nuevaCita"
+                        android:id="@+id/editText_service_edicionCita"
                         android:layout_width="271dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -274,64 +319,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_6_edicionCitas"
+                android:id="@+id/constraint_7_nuevaCita"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <RelativeLayout
-                    android:id="@+id/relative_L_others_edicionCitas"
-                    android:layout_width="347dp"
-                    android:layout_height="42dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/style_border_edittext"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/vector_others"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="10dp"
-                        android:drawableStart="@drawable/ic_others" />
-
-                    <!-- Caja para capturar observaciones -->
-                    <EditText
-                        android:id="@+id/editText_others_nuevaCita"
-                        android:layout_width="271dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="0dp"
-                        android:layout_toEndOf="@+id/vector_others"
-                        android:alpha="0.95"
-                        android:background="#0000"
-                        android:ems="10"
-                        android:hint="Observaciones"
-                        android:inputType="textPersonName"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </RelativeLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_8_edicionCitas"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="48dp">
-
-                <!--Botón para ir atrás-->
                 <Button
-                    android:id="@+id/button_2_back_nuevaCita"
+                    android:id="@+id/button_2_back_edicionCitas"
                     android:layout_width="145dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="8dp"
@@ -349,10 +342,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
-                <!--Botón guardar-->
                 <Button
-                    android:id="@+id/button_2_save_nuevaCita"
+                    android:id="@+id/button_1_drop_edicionCitas"
                     android:layout_width="145dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
@@ -369,7 +360,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/button_2_back_nuevaCita"
+                    app:layout_constraintStart_toEndOf="@+id/button_2_back_edicionCitas"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -377,5 +368,16 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Caja para capturar nombre -->
+
+
+    <!-- Caja para capturar fecha y hora -->
+
+
+    <!-- Caja para capturar observaciones -->
+
+    <!--Botón para ir atrás-->
+
+    <!--Botón guardar-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
