@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendarHair">
         <activity
-            android:name=".EditarCitaActivity"
-            android:exported="false" />
-        <activity
             android:name=".TodasActivity"
             android:exported="false" />
         <activity
