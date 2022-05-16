@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.proyecto.IFP.databinding.ActivityNuevaCitaBinding;
 import com.proyecto.IFP.databinding.ActivityTodasBinding;
@@ -24,6 +26,7 @@ public class TodasActivity extends AppCompatActivity {
     private ArrayList<String> files = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
     private String contenidoItem;
+    private String[] partes;
 
     private ActivityTodasBinding binding;
 
@@ -40,8 +43,41 @@ public class TodasActivity extends AppCompatActivity {
         lista1= (ListView) findViewById(R.id.list_view_1_todas);
         db = new DataBaseSQL(this);
         files = db.getAllCitas();
+        adapter = new ArrayAdapter<String>(TodasActivity.this, android.R.layout.simple_list_item_1, files);
+        lista1.setAdapter(adapter);
+
+        lista1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                contenidoItem = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(TodasActivity.this, "Contenido Cita: " + contenidoItem, Toast.LENGTH_SHORT).show();
+
+                //obtenemos el contenido del Item
+                // contenidoItem = parent.getItemAtPosition(position).toString();
+                partes=contenidoItem.split("---");
+                //System.out.println("-->"+ partes[0]);
+
+                if(partes.length>1){
+                    //idP = db.getIdCita(contenidoItem);
+                    System.out.println("--> Id cita: "+partes[6]);
+                    int idCita = Integer.parseInt(partes[6]); // lo pasamos a int
+                    System.out.println("------> Id cita: "+idCita);
+
+                    pasarPantalla = new Intent(TodasActivity.this, EdicionCitaActivity.class);
+                    pasarPantalla.putExtra("fecha", partes[0]);
+                    pasarPantalla.putExtra("hora",partes[1]);
+                    pasarPantalla.putExtra("NOMBRE", partes[2]);
+                    pasarPantalla.putExtra("telefono", partes[3]);
+                    pasarPantalla.putExtra("servicio", partes[4]);
+                    pasarPantalla.putExtra("observaciones", partes[5]);
+                    pasarPantalla.putExtra("id", idCita);
+
+                    startActivity(pasarPantalla);
+                }
 
 
+            }
+        });
 
 
         boton1.setOnClickListener(new View.OnClickListener() {

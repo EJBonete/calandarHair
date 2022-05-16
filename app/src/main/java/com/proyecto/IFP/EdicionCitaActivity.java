@@ -142,9 +142,15 @@ public class EdicionCitaActivity extends AppCompatActivity {
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pasarPantalla = new Intent(EdicionCitaActivity.this, AccesoActivity.class);
-                finish();
-                startActivity(pasarPantalla);
+                if (fechaActual.equals(datoFecha)) {
+                    pasarPantalla = new Intent(EdicionCitaActivity.this, DiaSeleccionadoActivity.class);
+                    finish();
+                    startActivity(pasarPantalla);
+                } else {
+                    pasarPantalla = new Intent(EdicionCitaActivity.this, TodasActivity.class);
+                    finish();
+                    startActivity(pasarPantalla);
+                }
             }
         });
 
