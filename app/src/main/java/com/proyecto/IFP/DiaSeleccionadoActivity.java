@@ -61,25 +61,24 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
                 //obtenemos el contenido del Item
                // contenidoItem = parent.getItemAtPosition(position).toString();
                 partes=contenidoItem.split("/");
+                //System.out.println("-->"+ partes[0]);
 
                 if(partes.length>1){
-                    contenidoItem=partes[1];
                     idP = db.getIdCita(contenidoItem);
 
 
 
 
                     pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
-                    pasarPantalla.putExtra("id", idP);
-                    pasarPantalla.putExtra("NOMBRE", partes[1]);
-                    pasarPantalla.putExtra("servicio", partes[2]);
+                    pasarPantalla.putExtra("id", partes[6]);
                     pasarPantalla.putExtra("hora",partes[0]);
+                    pasarPantalla.putExtra("fecha", partes[1]);
+                    pasarPantalla.putExtra("NOMBRE", partes[2]);
+                    pasarPantalla.putExtra("telefono", partes[3]);
+                    pasarPantalla.putExtra("servicio", partes[4]);
 
-                    //ahora pasa el contenido de nombre, hay que traer mas datos desde la db.
 
-                    pasarPantalla.putExtra("fecha", contenidoItem);
-
-                    pasarPantalla.putExtra("observaciones", contenidoItem);
+                    pasarPantalla.putExtra("observaciones", partes[5]);
 
                     startActivity(pasarPantalla);
                 }

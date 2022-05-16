@@ -68,11 +68,12 @@ public class EdicionCitaActivity extends AppCompatActivity {
         if (extra != null) {
             //entrada de datos provinientes de la clase diaSeleccionadoActivity.
             id = extra.getInt("id");
+            datoFecha = extra.getString("fecha");
+            datoHora = extra.getString("hora");
             datoNombre = extra.getString("NOMBRE");
             datoTelefono = extra.getString("telefono");
             datoServicio = extra.getString("servicio");
-            datoFecha = extra.getString("fecha");
-            datoHora = extra.getString("hora");
+
             datoObservaciones = extra.getString("observaciones");
 
             //Insertado de datos en los editText y TextView.
@@ -104,7 +105,7 @@ public class EdicionCitaActivity extends AppCompatActivity {
             boton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    // revisar metodo
                     db.update(id, box1.getText().toString(), box3.getText().toString(), box2.getText().toString(),
                             label1.getText().toString(), label1.getText().toString(), box4.getText().toString());
                     Toast.makeText(EdicionCitaActivity.this, "La cita ha sido actualizada", Toast.LENGTH_SHORT).show();
