@@ -1,6 +1,6 @@
 package com.proyecto.IFP;
 
-// Video usado: https://www.youtube.com/watch?v=NK_-phxyIAM
+
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

@@ -2,14 +2,17 @@ package com.proyecto.IFP;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -28,6 +31,7 @@ public class EdicionCitaActivity extends AppCompatActivity {
     private String datoFecha = "";
     private String datoHora = "";
     private String datoObservaciones = "";
+    private int dia, mes, anyo, horas, minutos, segundos;
 
     private EditText box1;
     private TextView label1;
@@ -74,9 +78,6 @@ public class EdicionCitaActivity extends AppCompatActivity {
             datoTelefono = extra.getString("telefono");
             datoServicio = extra.getString("servicio");
             id = extra.getInt("id");
-
-
-
             datoObservaciones = extra.getString("observaciones");
 
             //Insertado de datos en los editText y TextView.
@@ -87,6 +88,43 @@ public class EdicionCitaActivity extends AppCompatActivity {
             box3.setText(datoTelefono);
             box4.setText(datoObservaciones);
             label2.setText(datoFecha);
+
+            //generamos en el editText la fecha para poder seleccionarla y mostrarla en el.
+            label2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final Calendar c= Calendar.getInstance();
+                    dia=c.get(Calendar.DAY_OF_MONTH);
+                    mes=c.get(Calendar.MONTH);
+                    anyo=c.get(Calendar.YEAR);
+                    DatePickerDialog datePickerDialog= new DatePickerDialog(EdicionCitaActivity.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
+                            label2.setText( year+"-"+ (monthOfYear+1) +"-"+ dayOfMonth);
+                        }
+                    }, anyo, mes, dia);
+                    datePickerDialog.show();
+                }
+            });
+
+            label1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final Calendar c= Calendar.getInstance();
+                    horas=c.get(Calendar.HOUR_OF_DAY);
+                    minutos=c.get(Calendar.MINUTE);
+                    segundos=c.get(Calendar.SECOND);
+                    TimePickerDialog timePickerDialog= new TimePickerDialog(EdicionCitaActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int horas, int minutos) {
+                            label1.setText(horas+":"+minutos+":"+"00");
+                        }
+                    }, horas, minutos, false);
+                    timePickerDialog.show();
+
+
+                }
+            });
 
             //borrar cita
             boton1 = (Button) findViewById(R.id.button_1_drop_edicionCitas);
