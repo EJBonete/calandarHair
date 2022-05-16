@@ -93,12 +93,19 @@ public class EdicionCitaActivity extends AppCompatActivity {
             boton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    pasarPantalla = new Intent(EdicionCitaActivity.this, AccesoActivity.class);
-                    finish();
-                    startActivity(pasarPantalla);
 
                     //este id aun esta vacio.
                     db.deleteCita(id);
+                    Toast.makeText(EdicionCitaActivity.this, "ELIMINADA", Toast.LENGTH_SHORT).show();
+                    if (fechaActual.equals(datoFecha)) {
+                        pasarPantalla = new Intent(EdicionCitaActivity.this, DiaSeleccionadoActivity.class);
+                        finish();
+                        startActivity(pasarPantalla);
+                    } else {
+                        pasarPantalla = new Intent(EdicionCitaActivity.this, TodasActivity.class);
+                        finish();
+                        startActivity(pasarPantalla);
+                    }
 
 
                 }
@@ -109,17 +116,11 @@ public class EdicionCitaActivity extends AppCompatActivity {
             boton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // revisar metodo
-                    System.out.println("--->:"+box1.getText().toString());
-                    System.out.println("--->:"+box3.getText().toString());
-                    System.out.println("--->:"+box2.getText().toString());
-                    System.out.println("--->:"+label2.getText().toString());
-                    System.out.println("--->:"+label1.getText().toString());
-                    System.out.println("--->:"+box4.getText().toString());
 
 
-                    db.editCita(id, box1.getText().toString(), box3.getText().toString(), box2.getText().toString(),
-                            label2.getText().toString(), label1.getText().toString(), box4.getText().toString());
+
+
+                    db.editCita(id, box1.getText().toString(), box3.getText().toString(), box2.getText().toString(), label2.getText().toString(), label1.getText().toString(), box4.getText().toString());
                     Toast.makeText(EdicionCitaActivity.this, "La cita ha sido actualizada", Toast.LENGTH_SHORT).show();
                     //quiero regresar a la activity de donde he venido. ¿un condicional? ¿pero como averiguo de donde he venido?
                     //se me ha ocurrido usas la fecha de la cita para hacer la compración.
