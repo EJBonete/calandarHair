@@ -67,16 +67,20 @@ public class EdicionCitaActivity extends AppCompatActivity {
         extra = getIntent().getExtras();
         if (extra != null) {
             //entrada de datos provinientes de la clase diaSeleccionadoActivity.
-            id = extra.getInt("id");
+
             datoFecha = extra.getString("fecha");
             datoHora = extra.getString("hora");
             datoNombre = extra.getString("NOMBRE");
             datoTelefono = extra.getString("telefono");
             datoServicio = extra.getString("servicio");
+            id = extra.getInt("id");
+            System.out.println("**------> Id cita: "+id);
+
 
             datoObservaciones = extra.getString("observaciones");
 
             //Insertado de datos en los editText y TextView.
+
             box1.setText(datoNombre);
             label1.setText(datoHora);
             box2.setText(datoServicio);
@@ -106,8 +110,16 @@ public class EdicionCitaActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     // revisar metodo
-                    db.update(id, box1.getText().toString(), box3.getText().toString(), box2.getText().toString(),
-                            label1.getText().toString(), label1.getText().toString(), box4.getText().toString());
+                    System.out.println("--->:"+box1.getText().toString());
+                    System.out.println("--->:"+box3.getText().toString());
+                    System.out.println("--->:"+box2.getText().toString());
+                    System.out.println("--->:"+label2.getText().toString());
+                    System.out.println("--->:"+label1.getText().toString());
+                    System.out.println("--->:"+box4.getText().toString());
+
+
+                    db.editCita(id, box1.getText().toString(), box3.getText().toString(), box2.getText().toString(),
+                            label2.getText().toString(), label1.getText().toString(), box4.getText().toString());
                     Toast.makeText(EdicionCitaActivity.this, "La cita ha sido actualizada", Toast.LENGTH_SHORT).show();
                     //quiero regresar a la activity de donde he venido. ¿un condicional? ¿pero como averiguo de donde he venido?
                     //se me ha ocurrido usas la fecha de la cita para hacer la compración.

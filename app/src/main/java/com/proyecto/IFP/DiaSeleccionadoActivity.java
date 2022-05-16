@@ -35,7 +35,7 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_hoy);
 
-       db = new DataBaseSQL(this);
+        db = new DataBaseSQL(this);
         boton1 = (Button) findViewById(R.id.button_1_back_hoy);
         list1 = (ListView) findViewById(R.id.listview_hoy);
 
@@ -60,25 +60,27 @@ public class DiaSeleccionadoActivity extends AppCompatActivity {
 
                 //obtenemos el contenido del Item
                // contenidoItem = parent.getItemAtPosition(position).toString();
-                partes=contenidoItem.split("/");
+                partes=contenidoItem.split("---");
                 //System.out.println("-->"+ partes[0]);
 
                 if(partes.length>1){
-                    idP = db.getIdCita(contenidoItem);
+                    //idP = db.getIdCita(contenidoItem);
+                    System.out.println("--> Id cita: "+partes[6]);
+                    int idCita = Integer.parseInt(partes[6]); // lo pasamos a int
+                    System.out.println("------> Id cita: "+idCita);
 
 
 
 
                     pasarPantalla = new Intent(DiaSeleccionadoActivity.this, EdicionCitaActivity.class);
-                    pasarPantalla.putExtra("id", partes[6]);
+
                     pasarPantalla.putExtra("hora",partes[0]);
                     pasarPantalla.putExtra("fecha", partes[1]);
                     pasarPantalla.putExtra("NOMBRE", partes[2]);
                     pasarPantalla.putExtra("telefono", partes[3]);
                     pasarPantalla.putExtra("servicio", partes[4]);
-
-
                     pasarPantalla.putExtra("observaciones", partes[5]);
+                    pasarPantalla.putExtra("id", idCita);
 
                     startActivity(pasarPantalla);
                 }

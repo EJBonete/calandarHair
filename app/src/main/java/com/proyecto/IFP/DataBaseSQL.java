@@ -36,6 +36,9 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     }
 
     public void update(int id, String nombre, String contacto, String servicio, String fecha, String hora, String observaciones) {
+        db = this.getReadableDatabase();
+        /*db.execSQL("INSERT OR REPLACE INTO tablacitas (nombre, telefono, servicio, fecha, hora, observaciones) VALUES ('" + nombre + "','" + contacto + "','" + servicio + "','" + fecha + "','" + hora + "','" + observaciones + "')WHERE id= +id+");*/
+
         db.execSQL("UPDATE tablacitas set nombre=" + nombre + ", contacto=" + contacto + ", servicio=" + servicio + ", " +
                 "fecha=" + fecha + ", hora=" + hora + ", observaciones=" + observaciones + " WHERE id=" + id);
     }
@@ -64,7 +67,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         res = db.rawQuery("SELECT * FROM tablacitas WHERE fecha='" + fechaActual + "' ORDER BY hora", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
-            contenido = res.getString(res.getColumnIndex("hora"))+ "/" +res.getString(res.getColumnIndex("fecha"))+ "/" + res.getString(res.getColumnIndex("nombre")) + "/" + res.getString(res.getColumnIndex("telefono")) + "/" + res.getString(res.getColumnIndex("servicio")) + "/" +  res.getString(res.getColumnIndex("observaciones"))+ "/" +res.getInt(res.getColumnIndex("id")) ;
+            contenido = res.getString(res.getColumnIndex("hora"))+ "---" +res.getString(res.getColumnIndex("fecha"))+ "---" + res.getString(res.getColumnIndex("nombre")) + "---" + res.getString(res.getColumnIndex("telefono")) + "---" + res.getString(res.getColumnIndex("servicio")) + "---" +  res.getString(res.getColumnIndex("observaciones"))+ "---" +res.getInt(res.getColumnIndex("id")) ;
 
             arrayCitas.add(contenido);
             res.moveToNext();
@@ -127,7 +130,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     // FUNCION EDITAR CITA
     public void editCita(int id, String nombre, String telefono, String servicio, String fecha, String hora, String observaciones) {
         db = getWritableDatabase();
-        db.execSQL("UPDATE tablacitas SET nombre='" + nombre + "', '" + telefono + "', '" + servicio + "', '" + fecha + "', '" + hora + "', '" + observaciones + "' WHERE id=" + id);
+        db.execSQL("UPDATE tablacitas SET nombre='" + nombre + "', telefono= '" + telefono + "', servicio='" + servicio + "', fecha='" + fecha + "', hora= '" + hora + "', observaciones='" + observaciones + "' WHERE id=" + id );
 
     }
 
