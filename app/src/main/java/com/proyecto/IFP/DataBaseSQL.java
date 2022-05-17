@@ -27,7 +27,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXIST citasBD");
+        db.execSQL("DROP TABLE IF EXISTS citasBD");
     }
 
     public void insertarCita(String nombre, String telefono, String servicio, String fecha, String hora, String observaciones) {
