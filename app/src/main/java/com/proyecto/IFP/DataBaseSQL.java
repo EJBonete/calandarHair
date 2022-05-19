@@ -42,7 +42,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         return num;
     }
 
-    //obtener del tlf la feacha actual.
+    //obtener del tlf la fecha actual.
     Calendar cc = Calendar.getInstance();
     int year = cc.get(Calendar.YEAR);
     int month = cc.get(Calendar.MONTH);
